@@ -6,28 +6,55 @@ const SERVICES_SCHEDULE: ServiceInfo[] = [
     id: "dominical",
     name: "Celebración de la Fe",
     day: "Domingos",
-    time: "10:00 AM",
+    time: "8:00 AM y 10:30 AM",
     description: "Nuestra reunión presencial principal. Un espacio para adorar juntos en comunidad, recibir un mensaje transformador y relevante de la Palabra de Dios, y orar por necesidades familiares.",
     iconName: "Sun",
     type: "principal",
   },
   {
-    id: "oracion",
-    name: "Círculo de Oración y Avivamiento",
+    id: "miercoles",
+    name: "Miércoles Explosivos",
     day: "Miércoles",
     time: "7:00 PM",
-    description: "Un espacio dedicado al clamor íntimo, intercesión comunitaria por sanidad celestial, y estudio bíblico estructurado para alimentar el espíritu a mitad de semana.",
+    description: "Un espacio de intercesión en llamas, intercesión activa por milagros y clamor ferviente que enciende la fe y el avivamiento en tu semana.",
     iconName: "Flame",
     type: "especial",
   },
   {
-    id: "jovenes",
+    id: "machos",
     name: "Oración de Machos",
     day: "Martes",
-    time: "5:00 AM",
+    time: "4:30 AM",
     description: "Hombres llamados a bendecir, interceder y clamar activamente por la dirección espiritual de su hogar, la restauración y protección de sus matrimonios, hijos y familias.",
     iconName: "Users",
     type: "estudio",
+  },
+  {
+    id: "kids",
+    name: "Vida Kids",
+    day: "Domingos",
+    time: "8:00 AM y 10:30 AM",
+    description: "Un auditorio interactivo y seguro adaptado para que los niños crezcan conociendo el amor de Jesús con clases lúdicas y dinámicas bíblicas.",
+    iconName: "Sparkles",
+    type: "especial",
+  },
+  {
+    id: "mujeres",
+    name: "Reunión de Mujeres",
+    day: "Primer Sábado de Mes",
+    time: "4:00 PM",
+    description: "Un espacio valioso de edificación de fe, intercesión conjunta, restauración interior y conexión de corazón diseñado especialmente para bendecir a cada mujer.",
+    iconName: "Heart",
+    type: "especial",
+  },
+  {
+    id: "jovenes_vip",
+    name: "Jóvenes (Zona VIP)",
+    day: "Primer Sábado de Mes",
+    time: "5:00 PM",
+    description: "Reunión especial de jóvenes enfocada en la consagración activa, edificar un propósito de vida eterno y consolidar amistades sanas basadas en la verdad.",
+    iconName: "Sparkles",
+    type: "especial",
   },
 ];
 
@@ -40,6 +67,10 @@ export default function Services() {
         return <Flame className="w-5 h-5 text-rose-600" />;
       case "Users":
         return <Users className="w-5 h-5 text-red-600" />;
+      case "Sparkles":
+        return <Sparkles className="w-5 h-5 text-yellow-500" />;
+      case "Heart":
+        return <Heart className="w-5 h-5 text-[#ff0000] fill-red-500/10" />;
       default:
         return <Clock className="w-5 h-5 text-stone-500" />;
     }
@@ -47,7 +78,7 @@ export default function Services() {
 
   return (
     <section id="servicios" className="py-24 px-6 bg-white border-t border-stone-200/50">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16" id="services-header">
@@ -63,7 +94,7 @@ export default function Services() {
         </div>
 
         {/* Schedule Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8" id="services-grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
           {SERVICES_SCHEDULE.map((service) => (
             <div
               key={service.id}

@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
-  Calendar, Clock, MapPin, Heart, BookOpen, 
+  Calendar, Clock, MapPin, Heart, BookOpen, Users,
   ChevronRight, Send, Check, DollarSign, ArrowRight, PlayCircle
 } from "lucide-react";
 
@@ -161,8 +161,8 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   </div>
                 </div>
                 <div className="mt-8 text-left">
-                  <span className="text-xs text-stone-400 block uppercase tracking-wide font-semibold">Taller de Fe</span>
-                  <span className="text-[#ff0000] font-bold text-base block mt-0.5">7:30 PM</span>
+                  <span className="text-xs text-stone-400 block uppercase tracking-wide font-semibold">Miércoles Explosivos</span>
+                  <span className="text-[#ff0000] font-bold text-base block mt-0.5">7:00 PM</span>
                 </div>
               </div>
 
@@ -182,11 +182,11 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                 </div>
                 <div className="mt-8 text-left">
                   <span className="text-xs text-stone-400 block uppercase tracking-wide font-semibold font-bold">Oración de machos</span>
-                  <span className="text-[#ff0000] font-bold text-base block mt-0.5">5:00 AM</span>
+                  <span className="text-[#ff0000] font-bold text-base block mt-0.5">4:30 AM</span>
                 </div>
               </div>
 
-              {/* Card 4: Vida Kits */}
+              {/* Card 4: Vida Kids */}
               <div 
                 className="bg-white border border-stone-150 rounded-2xl p-6 hover:border-[#ff0000] transition-all duration-300 group flex flex-col justify-between"
                 id="sch-box-4"
@@ -197,7 +197,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   </div>
                   <div>
                     <span className="text-[10px] uppercase font-bold text-stone-400 tracking-wider">Atención de Niños</span>
-                    <h3 className="font-display font-black text-stone-950 text-lg leading-tight mt-1">Vida Kits</h3>
+                    <h3 className="font-display font-black text-stone-950 text-lg leading-tight mt-1">Vida Kids</h3>
                   </div>
                 </div>
                 <div className="mt-8 text-left">

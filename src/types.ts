@@ -8,7 +8,7 @@ export interface ServiceInfo {
   day: string;
   time: string;
   description: string;
-  iconName: "Sun" | "Calendar" | "Flame" | "Clock" | "Users" | "Heart";
+  iconName: "Sun" | "Calendar" | "Flame" | "Clock" | "Users" | "Heart" | "Sparkles";
   type: "principal" | "especial" | "estudio";
 }
 

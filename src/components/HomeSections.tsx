@@ -18,6 +18,14 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
   // Video Carousel State & Data
   const carouselVideos = [
     {
+      id: "j68zrf56bjE",
+      title: "Viajeras al Futuro | Mujeres Plenas",
+      speaker: "Ministerio Mujeres Plenas",
+      tag: "Mujeres Plenas",
+      duration: "52:45",
+      description: "Aprende a proyectarte con fe inquebrantable, autoridad espiritual y sabiduría hacia el futuro glorioso que Dios ha diseñado para ti y tu familia.",
+    },
+    {
       id: "HdJjdmw_kmA",
       title: "Hay un Propósito Mayor",
       speaker: "Ld. Angélica Quintero",

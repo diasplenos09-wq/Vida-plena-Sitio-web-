@@ -15,6 +15,17 @@ interface VideoSermon {
 
 const SERMONS_DATABASE: VideoSermon[] = [
   {
+    id: "sermon-viajeras-al-futuro",
+    title: "Viajeras al Futuro | Mujeres Plenas",
+    embedUrl: "https://www.youtube.com/embed/j68zrf56bjE?si=z5LOZZvx4ZP9kfta",
+    category: "familia",
+    tagLabel: "Mujeres Plenas",
+    duration: "52:45",
+    preachedDate: "19 de Septiembre, 2026",
+    views: "1,680 vistas",
+    description: "Inspiradora conferencia del ministerio Mujeres Plenas en Vida Plena Internacional: proyectándote con fe inquebrantable, autoridad espiritual y visión divina hacia el futuro que Dios ha preparado."
+  },
+  {
     id: "sermon-proposito-mayor",
     title: "Hay un Propósito Mayor",
     embedUrl: "https://www.youtube.com/embed/HdJjdmw_kmA?si=84O7ZpWFsR9g9qEA",

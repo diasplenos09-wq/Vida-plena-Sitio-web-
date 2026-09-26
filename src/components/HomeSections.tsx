@@ -18,6 +18,14 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
   // Video Carousel State & Data
   const carouselVideos = [
     {
+      id: "HdJjdmw_kmA",
+      title: "Hay un Propósito Mayor",
+      speaker: "Ld. Angélica Quintero",
+      tag: "Mensaje Destacado",
+      duration: "41:30",
+      description: "Descubre que aun en medio de las pruebas y la incertidumbre, Dios está alineando todas las cosas para un propósito mayor y de bendición.",
+    },
+    {
       id: "bo5vJJ20OKU",
       title: "Vence la Mentalidad de Langosta",
       speaker: "Apóstol Oscar Bernier",

@@ -15,6 +15,17 @@ interface VideoSermon {
 
 const SERMONS_DATABASE: VideoSermon[] = [
   {
+    id: "sermon-proposito-mayor",
+    title: "Hay un Propósito Mayor",
+    embedUrl: "https://www.youtube.com/embed/HdJjdmw_kmA?si=84O7ZpWFsR9g9qEA",
+    category: "fe",
+    tagLabel: "Propósito Mayor",
+    duration: "41:30",
+    preachedDate: "23 de Septiembre, 2026",
+    views: "1,420 vistas",
+    description: "Poderosa enseñanza compartida por la Ld. Angélica Quintero en Vida Plena Internacional: descubre cómo Dios transforma cada desafío en un propósito mayor para tu vida y familia."
+  },
+  {
     id: "sermon1",
     title: "Restaurando Familias con el Poder de Dios",
     embedUrl: "https://www.youtube.com/embed/WKzvTfoh4_U?si=vZFEy3KZ8HfJs-mA",

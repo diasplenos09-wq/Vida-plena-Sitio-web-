@@ -114,10 +114,10 @@ export default function Messages() {
                 onClick={() => {
                   setActiveTab(cat.id);
                 }}
-                className={`flex items-center gap-1.5 px-5 py-2.5 rounded-full font-sans text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer focus:outline-hidden ${
+                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full font-sans text-xs font-medium tracking-wide transition-all duration-200 cursor-pointer focus:outline-hidden ${
                   isSelected
-                    ? "bg-[#ff0000] text-white shadow-md scale-[1.03]"
-                    : "bg-stone-50 border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-stone-100"
+                    ? "bg-[#ff0000] text-white shadow-xs"
+                    : "bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-stone-50"
                 }`}
                 id={`cat-btn-${cat.id}`}
               >
@@ -242,7 +242,7 @@ export default function Messages() {
                 setActiveTab("todos");
                 setSearchQuery("");
               }}
-              className="mt-6 bg-stone-950 hover:bg-[#ff0000] text-white font-sans text-[10px] font-bold uppercase tracking-wider px-6 py-3 rounded-full transition-colors cursor-pointer"
+              className="mt-6 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-medium px-5 py-2 rounded-full transition-colors cursor-pointer shadow-xs"
             >
               Restablecer Filtros
             </button>

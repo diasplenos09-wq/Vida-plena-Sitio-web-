@@ -1,8 +1,8 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, TouchEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   Calendar, Clock, MapPin, Heart, BookOpen, Users,
-  ChevronRight, Send, Check, DollarSign, ArrowRight, PlayCircle
+  ChevronRight, ChevronLeft, Send, Check, DollarSign, ArrowRight, PlayCircle, ExternalLink, Play
 } from "lucide-react";
 
 interface SectionsProps {
@@ -14,6 +14,72 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
   const [donateAmount, setDonateAmount] = useState("50000");
   const [customAmount, setCustomAmount] = useState("");
   const [donateSuccess, setDonateSuccess] = useState(false);
+
+  // Video Carousel State & Data
+  const carouselVideos = [
+    {
+      id: "bo5vJJ20OKU",
+      title: "Vence la Mentalidad de Langosta",
+      speaker: "Apóstol Oscar Bernier",
+      tag: "Prédica Central",
+      duration: "42:18",
+      description: "Rompe los límites de la duda y abraza la grandeza y promesas que Dios preparó para tu familia.",
+    },
+    {
+      id: "WKzvTfoh4_U",
+      title: "Restaurando Familias con el Poder de Dios",
+      speaker: "Comunidad Cristiana Vida Plena",
+      tag: "Hogar y Familia",
+      duration: "45:12",
+      description: "Claves espirituales para blindar tu hogar contra las tormentas, restaurar el amor conyugal y levantar hijos de bien.",
+    },
+    {
+      id: "VgK7rBy3h-Y",
+      title: "Estableciendo el Reino de Dios en la Tierra",
+      speaker: "Comunidad Cristiana Vida Plena",
+      tag: "Aumentar Fe",
+      duration: "48:50",
+      description: "Enseñanza profunda sobre las leyes sobrenaturales del Reino de Dios y la manifestación de milagros en el día a día.",
+    },
+    {
+      id: "tnUBiJwbmek",
+      title: "Caminando con Valentía y Esperanza Diaria",
+      speaker: "Comunidad Cristiana Vida Plena",
+      tag: "Vencer Temor",
+      duration: "39:15",
+      description: "Aprende a superar el miedo y la ansiedad, viviendo en serenidad y victoria bajo la cobertura del Altísimo.",
+    },
+  ];
+
+  const [currentVideoIdx, setCurrentVideoIdx] = useState(0);
+  const [isPlayingCurrent, setIsPlayingCurrent] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const handlePrevVideo = () => {
+    setIsPlayingCurrent(false);
+    setCurrentVideoIdx((prev) => (prev === 0 ? carouselVideos.length - 1 : prev - 1));
+  };
+
+  const handleNextVideo = () => {
+    setIsPlayingCurrent(false);
+    setCurrentVideoIdx((prev) => (prev === carouselVideos.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleTouchStart = (e: TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (diff > 45) {
+      handleNextVideo();
+    } else if (diff < -45) {
+      handlePrevVideo();
+    }
+    setTouchStartX(null);
+  };
 
   const handleMapRedirect = () => {
     window.open("https://waze.com/ul?ll=4.7431,-74.0432&navigate=yes", "_blank", "referrerpolicy=no-referrer");
@@ -101,21 +167,21 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
               <div className="flex flex-wrap gap-3" id="navigation-cta-buttons">
                 <button
                   onClick={handleMapRedirect}
-                  className="inline-flex items-center gap-2.5 bg-stone-950 hover:bg-[#ff0000] text-white font-sans text-[11px] font-bold uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-medium px-5 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
                   id="sketch-btn-horarios"
                 >
                   Ver Horarios (Waze)
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
                 <a
                   href="https://share.google/pvSe8QKyMZ2HoplYx"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 bg-[#ff0000] hover:bg-stone-950 text-white font-sans text-[11px] font-bold uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-medium px-5 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
                   id="sketch-btn-googlemaps"
                 >
                   Google Maps
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
@@ -166,7 +232,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                 </div>
               </div>
 
-              {/* Card 3: Oración de Machos */}
+              {/* Card 3: Oración de madrugada ADN */}
               <div 
                 className="bg-white border border-stone-150 rounded-2xl p-6 hover:border-[#ff0000] transition-all duration-300 group flex flex-col justify-between"
                 id="sch-box-3"
@@ -181,8 +247,8 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   </div>
                 </div>
                 <div className="mt-8 text-left">
-                  <span className="text-xs text-stone-400 block uppercase tracking-wide font-semibold font-bold">Oración de machos</span>
-                  <span className="text-[#ff0000] font-bold text-base block mt-0.5">4:30 AM</span>
+                  <span className="text-xs text-stone-400 block uppercase tracking-wide font-semibold">Oración de madrugada ADN</span>
+                  <span className="text-[#ff0000] font-bold text-base block mt-0.5">5:00 AM</span>
                 </div>
               </div>
 
@@ -212,53 +278,213 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
         </div>
       </section>
 
-      {/* SECTION 2: The House Blend style - Featured sermon */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 bg-stone-50/50 border-t border-stone-100" id="featured-sermon-section">
+      {/* SECTION 2: Featured Sermon & Interactive Video Carousel */}
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-stone-50/50 border-t border-stone-100" id="featured-sermon-section">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Left Column: Sermon Title details and info */}
-            <div className="lg:col-span-7 text-left space-y-6" id="featured-sermon-text">
+            {/* Left Column: Left-justified from middle to left (lg:col-span-6) */}
+            <div className="lg:col-span-6 text-left space-y-6" id="featured-sermon-text">
               <span className="text-[10px] uppercase font-bold text-[#ff0000] tracking-widest bg-red-50 px-3 py-1 rounded-full inline-block">
                 Único Mensaje Prominente
               </span>
-              <h2 className="text-stone-950 font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-none">
+              <h2 className="text-stone-950 font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
                 El Mensaje del Hogar
               </h2>
-              <p className="text-stone-700 font-sans text-xs sm:text-sm leading-relaxed max-w-xl">
+              <p className="text-stone-700 font-sans text-xs sm:text-sm leading-relaxed max-w-xl text-left">
                 La enseñanza de la Palabra de Dios es el eje restaurador en Vida Plena Internacional. Nuestros mensajes semanales brindan las claves espirituales para blindar tu hogar contra la duda, restaurar el amor conyugal y educar hijos saludables. Accede gratis a la serie de prédicas multimedia.
               </p>
 
-              <div className="space-y-4 pt-4" id="house-blend-highlights">
+              <div className="space-y-4 pt-2 text-left" id="house-blend-highlights">
                 <div className="flex items-start gap-3">
                   <div className="w-2.5 h-2.5 bg-[#ff0000] rounded-full mt-1.5 shrink-0" />
-                  <p className="text-[11px] sm:text-xs text-stone-605">
-                    <strong>Enseñanza Práctica:</strong> Sin sermones cansados; explicamos la Biblia en lenguaje sencillo y aplicable a tu lunes por la mañana.
+                  <p className="text-[11px] sm:text-xs text-stone-600 text-left">
+                    <strong className="text-stone-900 font-semibold">Enseñanza Práctica:</strong> Sin sermones cansados; explicamos la Biblia en lenguaje sencillo y aplicable a tu lunes por la mañana.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-2.5 h-2.5 bg-[#ff0000] rounded-full mt-1.5 shrink-0" />
-                  <p className="text-[11px] sm:text-xs text-stone-605">
-                    <strong>Poder Devocional:</strong> Activa el poder protector del Espíritu Santo y libera el potencial oculto en tu caminar ministerial.
+                  <p className="text-[11px] sm:text-xs text-stone-600 text-left">
+                    <strong className="text-stone-900 font-semibold">Poder Devocional:</strong> Activa el poder protector del Espíritu Santo y libera el potencial oculto en tu caminar ministerial.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4 pt-6" id="house-blend-ctas">
+              <div className="flex items-center gap-4 pt-2 text-left" id="house-blend-ctas">
                 <button
                   onClick={() => onNavigate("mensajes")}
-                  className="bg-stone-950 hover:bg-[#ff0000] text-white font-sans text-[11px] font-bold uppercase tracking-widest px-8 py-4 rounded-full transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                  className="bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
                 >
                   Ver Prédicas en Línea
                 </button>
               </div>
             </div>
 
-            {/* Right Column: YouTube video player instead of Serie Actual as requested */}
-            <div className="lg:col-span-5 flex items-center justify-center w-full" id="featured-sermon-video">
-              <div className="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-stone-200/80 bg-stone-950" id="youtube-embed-wrapper">
-                {renderVideoCover("bo5vJJ20OKU", "El Mensaje del Hogar")}
-              </div>
+            {/* Right Column: Interactive Swipeable Video Carousel (lg:col-span-6) */}
+            <div className="lg:col-span-6 w-full" id="featured-sermon-video">
+              {(() => {
+                const activeVideo = carouselVideos[currentVideoIdx];
+                return (
+                  <div 
+                    className="relative bg-white rounded-3xl p-3 sm:p-4 shadow-xl border border-stone-200/80 overflow-hidden select-none"
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                    id="video-carousel-container"
+                  >
+                    {/* Screen / Player wrapper */}
+                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-stone-950 shadow-inner group">
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={activeVideo.id + (isPlayingCurrent ? "-play" : "-thumb")}
+                          initial={{ opacity: 0, scale: 0.98 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.98 }}
+                          transition={{ duration: 0.25 }}
+                          className="w-full h-full"
+                        >
+                          {isPlayingCurrent ? (
+                            <iframe
+                              src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1&rel=0`}
+                              title={activeVideo.title}
+                              className="w-full h-full border-0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          ) : (
+                            <div 
+                              onClick={() => setIsPlayingCurrent(true)}
+                              className="relative w-full h-full cursor-pointer overflow-hidden"
+                            >
+                              <img
+                                src={`https://img.youtube.com/vi/${activeVideo.id}/hqdefault.jpg`}
+                                alt={activeVideo.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                referrerPolicy="no-referrer"
+                              />
+                              <div className="absolute inset-0 bg-stone-950/30 group-hover:bg-stone-950/45 transition-colors duration-300 flex items-center justify-center">
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#ff0000] text-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 active:scale-95 transition-transform duration-200">
+                                  <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-white stroke-none ml-1" />
+                                </div>
+                              </div>
+
+                              {/* Badges on top of thumbnail */}
+                              <div className="absolute top-3 left-3 flex items-center gap-2">
+                                <span className="bg-stone-900/85 backdrop-blur-xs text-[10px] uppercase font-bold text-white px-2.5 py-1 rounded-md tracking-wider">
+                                  {activeVideo.tag}
+                                </span>
+                              </div>
+                              <div className="absolute top-3 right-3">
+                                <span className="bg-black/75 backdrop-blur-xs text-[10px] font-semibold text-white px-2 py-0.5 rounded-md">
+                                  {activeVideo.duration}
+                                </span>
+                              </div>
+
+                              {/* Helper label */}
+                              <div className="absolute bottom-3 right-3 bg-stone-900/90 text-white text-[10px] font-medium px-2.5 py-1 rounded-full opacity-90 group-hover:opacity-100 transition-opacity">
+                                Clic para reproducir aquí
+                              </div>
+                            </div>
+                          )}
+                        </motion.div>
+                      </AnimatePresence>
+
+                      {/* Carousel Arrow Controls (overlay) */}
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handlePrevVideo();
+                        }}
+                        className="absolute left-2.5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 bg-black/60 hover:bg-black/90 active:scale-90 text-white rounded-full flex items-center justify-center backdrop-blur-xs transition-all duration-200 shadow-md cursor-pointer z-10"
+                        title="Video anterior"
+                        aria-label="Video anterior"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleNextVideo();
+                        }}
+                        className="absolute right-2.5 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 bg-black/60 hover:bg-black/90 active:scale-90 text-white rounded-full flex items-center justify-center backdrop-blur-xs transition-all duration-200 shadow-md cursor-pointer z-10"
+                        title="Siguiente video"
+                        aria-label="Siguiente video"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
+                    </div>
+
+                    {/* Bottom Metadata & Controls Bar */}
+                    <div className="pt-3.5 pb-1 px-1 sm:px-2 flex flex-col gap-2.5">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="text-left flex-1 min-w-0">
+                          <h4 className="text-stone-900 font-display font-bold text-sm sm:text-base truncate">
+                            {activeVideo.title}
+                          </h4>
+                          <p className="text-stone-500 font-sans text-xs truncate">
+                            {activeVideo.speaker}
+                          </p>
+                        </div>
+                        <a
+                          href={`https://www.youtube.com/watch?v=${activeVideo.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="shrink-0 text-stone-500 hover:text-[#ff0000] text-xs flex items-center gap-1 font-medium transition-colors"
+                          title="Abrir en YouTube"
+                        >
+                          <span className="hidden sm:inline">YouTube</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+
+                      {/* Navigation Dots and Counter */}
+                      <div className="flex items-center justify-between pt-1 border-t border-stone-100">
+                        <div className="flex items-center gap-1.5" id="carousel-dots">
+                          {carouselVideos.map((video, idx) => (
+                            <button
+                              key={video.id}
+                              onClick={() => {
+                                setIsPlayingCurrent(false);
+                                setCurrentVideoIdx(idx);
+                              }}
+                              className={`h-1.5 transition-all duration-300 rounded-full cursor-pointer ${
+                                idx === currentVideoIdx
+                                  ? "w-7 bg-[#ff0000]"
+                                  : "w-2 bg-stone-300 hover:bg-stone-400"
+                              }`}
+                              title={`Ir al video ${idx + 1}: ${video.title}`}
+                              aria-label={`Video ${idx + 1}`}
+                            />
+                          ))}
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <span className="text-[11px] font-mono text-stone-400">
+                            {currentVideoIdx + 1} / {carouselVideos.length}
+                          </span>
+                          <div className="flex items-center gap-1">
+                            <button
+                              onClick={handlePrevVideo}
+                              className="p-1 text-stone-500 hover:text-stone-950 transition-colors cursor-pointer"
+                              aria-label="Anterior"
+                            >
+                              <ChevronLeft className="w-4 h-4" />
+                            </button>
+                            <button
+                              onClick={handleNextVideo}
+                              className="p-1 text-stone-500 hover:text-stone-950 transition-colors cursor-pointer"
+                              aria-label="Siguiente"
+                            >
+                              <ChevronRight className="w-4 h-4" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                );
+              })()}
             </div>
 
           </div>
@@ -285,10 +511,10 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
             
             <button 
               onClick={() => onNavigate("mensajes")}
-              className="inline-flex items-center gap-2 bg-white hover:bg-[#ff0000] hover:text-white text-stone-950 font-sans text-[10px] font-bold uppercase tracking-wider px-6 py-3.5 rounded-full transition-all duration-300 shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 bg-white hover:bg-[#ff0000] hover:text-white text-stone-900 font-sans text-xs font-medium px-5 py-2.5 rounded-full transition-all duration-200 shrink-0 cursor-pointer shadow-xs"
             >
               Ver Todas las Prédicas
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
 
@@ -376,10 +602,10 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
             </p>
 
             {/* Two Action Buttons side by side (Image 5 exact design) */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto relative z-10" id="callout-actions">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto relative z-10" id="callout-actions">
               <button
                 onClick={() => setShowDonateModal(true)}
-                className="w-full sm:w-auto bg-[#ff0000] hover:bg-[#dd0000] text-white font-sans text-xs font-bold px-12 py-4 rounded-full transition-all duration-300 hover:scale-[1.03] shadow-[0_4px_20px_rgba(255,0,0,0.3)] cursor-pointer"
+                className="w-full sm:w-auto bg-[#ff0000] hover:bg-[#dd0000] text-white font-sans text-xs font-medium px-7 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
                 id="btn-donate-trigger"
               >
                 Donar en línea
@@ -389,7 +615,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   const el = document.getElementById("schedules-and-location");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="w-full sm:w-auto bg-white hover:bg-stone-100 text-stone-950 font-sans text-xs font-bold px-10 py-4 rounded-full transition-all duration-300 hover:scale-[1.03] cursor-pointer"
+                className="w-full sm:w-auto bg-stone-900 hover:bg-stone-800 text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
                 id="btn-callout-schedules"
               >
                 Ver Horarios
@@ -505,13 +731,13 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                     <button
                       type="button"
                       onClick={() => setShowDonateModal(false)}
-                      className="bg-stone-50 hover:bg-stone-100 text-stone-700 font-semibold px-5 py-3 rounded-lg border border-stone-200 text-xs transition cursor-pointer"
+                      className="bg-stone-50 hover:bg-stone-100 text-stone-700 font-medium px-4 py-2 rounded-lg border border-stone-200 text-xs transition cursor-pointer"
                     >
                       Cancelar
                     </button>
                     <button
                       type="submit"
-                      className="bg-[#ff0000] hover:bg-[#dd0000] text-white font-bold px-7 py-3 rounded-lg text-xs transition-colors cursor-pointer shadow-md"
+                      className="bg-[#ff0000] hover:bg-[#dd0000] text-white font-medium px-5 py-2 rounded-lg text-xs transition-colors cursor-pointer shadow-xs"
                     >
                       Ofrendar ahora
                     </button>

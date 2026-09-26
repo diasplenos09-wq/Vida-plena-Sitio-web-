@@ -146,7 +146,7 @@ export default function Team() {
               href="https://share.google/pvSe8QKyMZ2HoplYx"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#ff0000] hover:bg-[#dd0000] text-white font-sans text-xs font-bold uppercase tracking-wider px-8 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.03] shadow-md hover:shadow-lg cursor-pointer"
+              className="inline-flex items-center gap-2 bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
               id="theology-btn-maps"
             >
               Google Maps
@@ -158,7 +158,7 @@ export default function Team() {
                   el.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="inline-flex items-center gap-2 bg-white hover:bg-stone-100 text-stone-950 font-sans text-xs font-bold uppercase tracking-wider px-8 py-3.5 rounded-full transition-all duration-300 hover:scale-[1.03] shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
               id="theology-btn-contact"
             >
               Contáctanos

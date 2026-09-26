@@ -21,11 +21,11 @@ const SERVICES_SCHEDULE: ServiceInfo[] = [
     type: "especial",
   },
   {
-    id: "machos",
-    name: "Oración de Machos",
+    id: "oracion-madrugada-adn",
+    name: "Oración de madrugada ADN",
     day: "Martes",
-    time: "4:30 AM",
-    description: "Hombres llamados a bendecir, interceder y clamar activamente por la dirección espiritual de su hogar, la restauración y protección de sus matrimonios, hijos y familias.",
+    time: "5:00 AM",
+    description: "Espacio de intercesión y búsqueda en el altar a primera hora de la mañana, orando por bendición, dirección espiritual y fortalecimiento de cada hogar y familia.",
     iconName: "Users",
     type: "estudio",
   },
@@ -168,7 +168,7 @@ export default function Services() {
             href="https://share.google/pvSe8QKyMZ2HoplYx"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full md:w-auto bg-[#ff0000] hover:bg-[#dd0000] text-white font-sans text-xs font-bold px-8 py-3.5 rounded-full flex items-center justify-center gap-2 transition duration-300 shrink-0 shadow-md hover:shadow-lg hover:scale-[1.02]"
+            className="w-full md:w-auto bg-[#ff0000] hover:bg-[#dd0000] text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full flex items-center justify-center gap-2 transition duration-200 shrink-0 shadow-xs"
             id="gps-navigation"
           >
             Cómo Llegar (Google Maps)

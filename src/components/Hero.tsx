@@ -1,14 +1,8 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, HelpCircle, Heart, Check, Users, MessageSquare, PhoneCall, Calendar } from "lucide-react";
-
 interface HeroProps {
   onNavigate: (sectionId: string) => void;
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
-  const [isFirstTimeOpen, setIsFirstTimeOpen] = useState(false);
-
   return (
     <section 
       id="inicio-banner" 
@@ -17,8 +11,8 @@ export default function Hero({ onNavigate }: HeroProps) {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Brand, Tag, Copy, Sub-Navigation & CTAs */}
-          <div className="lg:col-span-6 text-left space-y-10" id="hero-left-col">
+          {/* Left Column: Brand, Tag, Copy & CTAs */}
+          <div className="lg:col-span-6 text-left space-y-8" id="hero-left-col">
             
             {/* Minimal Capsule Badge Top */}
             <div className="inline-flex items-center gap-2 bg-[#ff0000] text-white px-5 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xs">
@@ -36,49 +30,29 @@ export default function Hero({ onNavigate }: HeroProps) {
             </h1>
 
             {/* Slogan Description in clear minimalist style */}
-            <p className="text-stone-605 font-sans text-xs sm:text-sm lg:text-base leading-relaxed max-w-xl" id="hero-slogan-p">
+            <p className="text-stone-600 font-sans text-xs sm:text-sm lg:text-base leading-relaxed max-w-xl" id="hero-slogan-p">
               Somos Vida Plena, una comunidad cristiana con una misión clara: establecer el Reino de Dios en la tierra mediante la predicación práctica y sencilla del evangelio de Jesucristo, llevando a cada persona a disfrutar la vida plena que Dios preparó.
             </p>
 
-            {/* Sub-navigation under the banner left text */}
-            <div className="py-4 border-y border-stone-100/80 my-4" id="home-sketch-subnav">
-              <span className="text-[10px] uppercase font-bold text-stone-400 tracking-wider block mb-3">Nuestra Iglesia</span>
-              <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold uppercase tracking-wider text-stone-600">
-                <button onClick={() => onNavigate("inicio")} className="hover:text-[#ff0000] transition cursor-pointer flex items-center gap-1.5 font-bold text-[#ff0000]">
-                  <span className="w-1.5 h-1.5 bg-[#ff0000] rounded-full" />
-                  Inicio
-                </button>
-                <button onClick={() => onNavigate("servicios")} className="hover:text-[#ff0000] hover:bg-stone-50 border border-stone-200 px-3.5 py-1 rounded-full transition cursor-pointer text-stone-700">
-                  Servicios
-                </button>
-                <button onClick={() => onNavigate("mensajes")} className="hover:text-[#ff0000] hover:bg-stone-50 border border-stone-200 px-3.5 py-1 rounded-full transition cursor-pointer text-stone-700">
-                  Mensajes
-                </button>
-                <button onClick={() => onNavigate("contacto")} className="hover:text-[#ff0000] hover:bg-stone-50 border border-stone-200 px-3.5 py-1 rounded-full transition cursor-pointer text-stone-700">
-                  Contacto
-                </button>
-              </div>
-            </div>
-
-            {/* Two Action buttons */}
-            <div className="flex flex-wrap gap-4 items-center" id="hero-action-triggers">
+            {/* Two Action buttons - Always in a single line on mobile and desktop */}
+            <div className="flex flex-row gap-3 sm:gap-4 items-center w-full sm:w-auto pt-2" id="hero-action-triggers">
               <button
                 onClick={() => onNavigate("mensajes")}
-                className="bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs sm:text-sm font-bold px-10 py-4.5 rounded-full transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-sm hover:shadow-md"
+                className="flex-1 sm:flex-initial text-center justify-center bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs sm:text-sm font-medium px-5 sm:px-7 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
                 id="hero-btn-messages"
               >
                 Ver Mensaje
               </button>
               <button
                 onClick={() => {
-                  const target = document.getElementById("schedules-and-location");
+                  const target = document.getElementById("servicios") || document.getElementById("schedules-and-location");
                   if (target) {
                     target.scrollIntoView({ behavior: "smooth" });
                   } else {
                     onNavigate("servicios");
                   }
                 }}
-                className="bg-stone-950 hover:bg-[#ff0000] text-white font-sans text-xs sm:text-sm font-bold px-10 py-4.5 rounded-full transition-all duration-300 hover:scale-[1.02] cursor-pointer shadow-sm"
+                className="flex-1 sm:flex-initial text-center justify-center bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs sm:text-sm font-medium px-5 sm:px-7 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
                 id="hero-btn-schedules"
               >
                 Ver Horarios

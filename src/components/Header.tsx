@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Heart, Sparkles, MessageSquare, PhoneCall, Calendar } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 interface HeaderProps {
   activeSection: string;
@@ -19,10 +19,10 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
   }, []);
 
   const navItems = [
-    { id: "inicio", label: "Inicio", icon: Sparkles },
-    { id: "servicios", label: "Servicios", icon: Calendar },
-    { id: "mensajes", label: "Mensajes", icon: MessageSquare },
-    { id: "contacto", label: "Contacto", icon: PhoneCall },
+    { id: "inicio", label: "Inicio" },
+    { id: "servicios", label: "Servicios" },
+    { id: "mensajes", label: "Mensajes" },
+    { id: "contacto", label: "Contacto" },
   ];
 
   const handleNavClick = (id: string) => {
@@ -59,20 +59,18 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1 bg-stone-100/80 p-1 rounded-full border border-stone-200/60" id="desktop-nav">
           {navItems.map((item) => {
-            const Icon = item.icon;
             const isActive = activeSection === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-5 py-2 rounded-full font-sans text-xs font-medium tracking-wide transition-all duration-300 flex items-center gap-1.5 cursor-pointer focus:outline-hidden ${
+                className={`relative px-4 py-1.5 rounded-full font-sans text-xs font-medium tracking-wide transition-all duration-200 cursor-pointer focus:outline-hidden ${
                   isActive
-                    ? "bg-stone-900 text-white shadow-xs font-semibold scale-[1.03]"
+                    ? "bg-stone-900 text-white shadow-xs font-semibold"
                     : "text-stone-600 hover:text-stone-900 hover:bg-stone-200/50"
                 }`}
                 id={`nav-link-${item.id}`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-red-400" : "text-stone-400"}`} />
                 {item.label}
               </button>
             );
@@ -83,10 +81,9 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
         <div className="hidden lg:block" id="dominant-cta-container">
           <button
             onClick={() => handleNavClick("servicios")}
-            className="bg-stone-950 hover:bg-[#ff0000] text-white font-sans text-xs font-semibold px-5 py-2.5 rounded-full flex items-center gap-2 transition-all duration-300 shadow-xs cursor-pointer hover:shadow-md hover:scale-[1.02] focus:outline-hidden"
+            className="bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-medium px-4 py-2 rounded-full transition-all duration-200 shadow-xs cursor-pointer focus:outline-hidden"
             id="dominant-cta"
           >
-            <Heart className="w-3.5 h-3.5 fill-[#ff0000]/20 text-[#ff0000]" />
             Horarios y Reunión
           </button>
         </div>
@@ -118,20 +115,18 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
               Menú de Navegación
             </div>
             {navItems.map((item) => {
-              const Icon = item.icon;
               const isActive = activeSection === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`w-full text-left px-4 py-3.5 rounded-xl flex items-center gap-3 font-sans font-medium text-sm transition-all duration-200 cursor-pointer ${
+                  className={`w-full text-left px-4 py-3 rounded-xl font-sans font-medium text-sm transition-all duration-200 cursor-pointer ${
                     isActive
                       ? "bg-red-50 text-red-900 border-l-4 border-red-600 font-semibold"
                       : "text-stone-600 hover:bg-stone-100 hover:text-stone-900"
                   }`}
                   id={`mobile-nav-link-${item.id}`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? "text-red-700" : "text-stone-400"}`} />
                   {item.label}
                 </button>
               );

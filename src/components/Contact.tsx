@@ -216,7 +216,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full bg-stone-900 hover:bg-stone-800 text-white font-sans text-xs font-bold py-3.5 rounded-xl shadow-xs hover:shadow-md transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                className="w-full bg-stone-900 hover:bg-stone-800 text-white font-sans text-xs font-medium py-2.5 rounded-xl shadow-xs transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 id="submit-prayer-btn"
               >
                 {submitting ? (

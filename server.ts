@@ -9,6 +9,7 @@ dotenv.config();
 // Initialize Express
 const app = express();
 app.use(express.json());
+app.use(express.static(path.join(process.cwd(), "public")));
 const PORT = 3000;
 
 // Initialize GoogleGenAI client (safe backend initialization)

@@ -9,7 +9,20 @@ import Team from "./components/Team";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const [activePage, setActivePage] = useState<string>("inicio");
+  const getInitialPage = () => {
+    if (typeof window === "undefined") return "inicio";
+    const path = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
+    if (["servicios", "mensajes", "contacto"].includes(path)) {
+      return path;
+    }
+    const hash = window.location.hash.replace(/^#/, "").toLowerCase();
+    if (["servicios", "mensajes", "contacto"].includes(hash)) {
+      return hash;
+    }
+    return "inicio";
+  };
+
+  const [activePage, setActivePage] = useState<string>(getInitialPage);
 
   // Restore scroll to top on page switches to give a real standalone page feeling
   useEffect(() => {
@@ -19,8 +32,28 @@ export default function App() {
     });
   }, [activePage]);
 
+  // Sync with browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
+      if (["servicios", "mensajes", "contacto"].includes(path)) {
+        setActivePage(path);
+      } else {
+        setActivePage("inicio");
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
   const handleNavigate = (pageId: string) => {
     setActivePage(pageId);
+    if (typeof window !== "undefined") {
+      const targetPath = pageId === "inicio" ? "/" : `/${pageId}`;
+      if (window.location.pathname !== targetPath) {
+        window.history.pushState({ pageId }, "", targetPath);
+      }
+    }
   };
 
   const renderActivePage = () => {

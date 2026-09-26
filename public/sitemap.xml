@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Página de Inicio -->
+  <url>
+    <loc>https://vidaplenainternacional.co/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://vidaplenainternacional.co/images/pastor_oscar_bernier_1779737938425.png</image:loc>
+      <image:title>Pastor Oscar Bernier - Vida Plena Internacional</image:title>
+      <image:caption>Pastor Principal de la Iglesia Cristiana Vida Plena Internacional</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vidaplenainternacional.co/images/pastora_diana_buitrago_1779737958044.png</image:loc>
+      <image:title>Pastora Diana Buitrago - Vida Plena Internacional</image:title>
+      <image:caption>Pastora de la Iglesia Cristiana Vida Plena Internacional</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://vidaplenainternacional.co/images/presbitero_elkin_quintero_1779737975790.png</image:loc>
+      <image:title>Presbítero Elkin Quintero - Vida Plena Internacional</image:title>
+      <image:caption>Presbítero de la Iglesia Cristiana Vida Plena Internacional</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Horarios y Servicios (Culto Dominical, Oración ADN, Doctrina) -->
+  <url>
+    <loc>https://vidaplenainternacional.co/servicios</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Prédicas y Mensajes en Línea -->
+  <url>
+    <loc>https://vidaplenainternacional.co/mensajes</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Contacto, Ubicación y Peticiones de Oración -->
+  <url>
+    <loc>https://vidaplenainternacional.co/contacto</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

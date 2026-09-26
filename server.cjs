@@ -30,6 +30,7 @@ var import_dotenv = __toESM(require("dotenv"), 1);
 import_dotenv.default.config();
 var app = (0, import_express.default)();
 app.use(import_express.default.json());
+app.use(import_express.default.static(import_path.default.join(process.cwd(), "public")));
 var PORT = 3e3;
 var ai = null;
 var API_KEY = process.env.GEMINI_API_KEY;

@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" width="240" height="120">
-  <!-- Solid Black Background as in official logo -->
-  <rect width="240" height="120" fill="#000000" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+  <!-- Fondo Negro Sólido tal como en la imagen -->
+  <rect width="1000" height="1000" fill="#000000" />
   
-  <!-- Red Worshipping Person Figure (Vida Plena Symbol) -->
-  <circle cx="54" cy="30" r="16" fill="#e50914" />
-  <path d="M 8 36 C 26 45, 42 48, 50 46 C 58 44, 80 28, 108 14 C 94 32, 74 48, 65 58 C 57 68, 50 92, 44 110 C 42 90, 36 68, 28 54 C 20 44, 12 38, 8 36 Z" fill="#e50914" />
+  <!-- Figura Adorador Vida Plena (Símbolo Oficial Rojo) -->
+  <!-- Cabeza circular separada del cuerpo -->
+  <circle cx="460" cy="295" r="80" fill="#e50914" />
   
-  <!-- "Vida Plena" in flowing script white -->
-  <text x="116" y="62" fill="#ffffff" font-family="'Brush Script MT', 'Dancing Script', 'Segoe Script', cursive, sans-serif" font-size="36" font-style="italic" font-weight="bold">Vida Plena</text>
-  
-  <!-- "Internacional" in clean sans-serif white -->
-  <text x="118" y="86" fill="#ffffff" font-family="'Montserrat', 'Inter', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">Internacional</text>
+  <!-- Cuerpo con brazos alzados y silueta de llama inferior -->
+  <path 
+    d="M 400 815 C 438 710, 445 580, 400 480 C 378 430, 355 405, 335 388 C 255 360, 180 335, 125 308 C 215 300, 305 320, 380 355 C 425 390, 495 390, 540 355 C 610 305, 695 240, 792 185 C 705 285, 620 380, 560 450 C 545 540, 510 660, 400 815 Z" 
+    fill="#e50914" 
+  />
 </svg>

@@ -20,18 +20,27 @@ export default function Hero({ onNavigate }: HeroProps) {
               BIENVENIDOS A CASA
             </div>
 
-            {/* Typography: Extrabold and Regular "VIDA PLENA INTERNACIONAL" */}
-            <h1 
-              className="font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tighter leading-[0.95] text-stone-950 uppercase"
-              id="hero-typography-parent"
-            >
-              <span className="font-extrabold block">VIDA PLENA</span>
-              <span className="font-light block text-stone-800 mt-1">INTERNACIONAL</span>
-            </h1>
+            {/* Typography: VIDA PLENA INTERNACIONAL as H2 & Iglesia Cristiana en Bogotá as H1 */}
+            <div className="space-y-2 sm:space-y-3">
+              <h2 
+                className="font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tighter leading-[0.95] text-stone-950 uppercase"
+                id="hero-typography-parent"
+              >
+                <span className="font-extrabold block">VIDA PLENA</span>
+                <span className="font-light block text-stone-800 mt-1">INTERNACIONAL</span>
+              </h2>
+
+              <h1 
+                className="font-sans text-base sm:text-lg lg:text-xl font-bold tracking-wide text-[#ff0000] uppercase"
+                id="hero-main-h1"
+              >
+                Iglesia Cristiana en Bogotá
+              </h1>
+            </div>
 
             {/* Slogan Description in clear minimalist style */}
             <p className="text-stone-600 font-sans text-xs sm:text-sm lg:text-base leading-relaxed max-w-xl" id="hero-slogan-p">
-              Somos Vida Plena, una comunidad cristiana con una misión clara: establecer el Reino de Dios en la tierra mediante la predicación práctica y sencilla del evangelio de Jesucristo, llevando a cada persona a disfrutar la vida plena que Dios preparó.
+              Somos Vida Plena, una <strong className="font-medium text-stone-800">comunidad cristiana en Bogotá</strong> enfocada en edificar hogares y vivir una fe que transforme vidas. Como <strong className="font-medium text-stone-800">iglesia cristiana en Bogotá</strong>, buscamos compartir el evangelio de Jesucristo de manera práctica, cercana y sencilla. Si buscas una <strong className="font-medium text-stone-800">comunidad cristiana en Bogotá</strong> donde puedas crecer en la fe, restaurarte y caminar en familia, te damos la bienvenida.
             </p>
 
             {/* Two Action buttons - Always in a single line on mobile and desktop */}

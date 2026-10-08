@@ -143,151 +143,162 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
   return (
     <div className="bg-white font-sans text-stone-900" id="home-additional-sections">
 
-      {/* SECTION 1: Signature Blend Style - Horarios y Ubicaciones */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 bg-white border-t border-stone-100" id="schedules-and-location">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            
-            {/* Left Side: Signature Blend layout from sketch */}
-            <div className="lg:col-span-5 text-left space-y-8" id="schedules-left-narrative">
-              <div className="space-y-4">
-                <span className="text-[10px] uppercase font-bold text-stone-400 tracking-widest block">
-                  Reuniones de Fe
-                </span>
-                <h2 className="text-stone-950 font-display font-bold text-4xl sm:text-5xl tracking-tight leading-tighter">
-                  Nuestros Horarios de Reunión
-                </h2>
-              </div>
-              
-              <p className="text-stone-600 font-sans text-xs sm:text-sm leading-relaxed max-w-md">
-                Cada semana nos reunimos para adorar, aprender y crecer juntos. Tenemos un espacio preparado para ti y toda tu familia. Participa en cualquiera de nuestros servicios presenciales en Bogotá.
-              </p>
+      {/* SECTION 1: REUNIONES Y HORARIOS */}
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-white border-t border-stone-100" id="schedules-and-location">
+        <div className="max-w-7xl mx-auto space-y-12">
+          
+          {/* Header de la Sección */}
+          <div className="max-w-3xl text-left space-y-3">
+            <h2 className="text-stone-950 font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight uppercase" id="titulo-comunidad-cristiana-bogota">
+              comunidad cristiana Bogotá
+            </h2>
+            <p className="text-stone-600 font-sans text-xs sm:text-sm lg:text-base leading-relaxed">
+              Cada semana nos reunimos para adorar, aprender y crecer juntos como familia en Dios. Conoce nuestros horarios de reunión y comodidades en nuestra sede norte.
+            </p>
+          </div>
 
-              <div className="border border-stone-100 rounded-2xl p-6 bg-stone-50/50 space-y-4 max-w-md" id="sketch-address-box">
-                <div className="flex gap-3.5 items-start">
-                  <MapPin className="w-5 h-5 text-[#ff0000] shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-display font-bold text-stone-900 text-xs sm:text-sm uppercase tracking-wide">Auditorio Principal</h4>
-                    <p className="text-stone-600 font-sans text-xs mt-1.5 leading-relaxed">
-                      Cl. 163 #18a-23, Bogotá, Colombia
-                    </p>
+          {/* Grid de Auditorio y Horarios de Reunión (Sin mapa aquí, movido al pie de página) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch" id="auditorio-horarios-grid">
+            
+            {/* Tarjeta Auditorio Principal */}
+            <div className="lg:col-span-5 bg-stone-50 border border-stone-200/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6" id="seccion-auditorio">
+              <div className="space-y-5 text-left">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-bold text-[#ff0000] tracking-widest bg-red-50 border border-red-100 px-3 py-1 rounded-full">
+                    Auditorio Presencial
+                  </span>
+                  <div className="w-8 h-8 rounded-full bg-white border border-stone-200/80 flex items-center justify-center text-[#ff0000] shadow-2xs">
+                    <MapPin className="w-4 h-4" />
                   </div>
                 </div>
-                <div className="h-[1px] bg-stone-200/50" />
-                <p className="text-[11px] text-stone-400 leading-normal">
-                  Sector seguro del norte con parqueadero vigilado y salas climatizadas para niños.
-                </p>
+
+                <div className="space-y-2">
+                  <h3 className="font-display font-black text-stone-950 text-xl sm:text-2xl tracking-tight">
+                    Auditorio Principal Bogotá
+                  </h3>
+                  <p className="text-stone-700 font-sans font-medium text-sm leading-snug">
+                    Cl. 163 #18a-23, Bogotá
+                  </p>
+                  <p className="text-stone-500 font-sans text-xs leading-relaxed pt-1">
+                    Ubicado estratégicamente en el norte de Bogotá. Un lugar seguro y acogedor diseñado para que disfrutes la presencia de Dios con total tranquilidad.
+                  </p>
+                </div>
+
+                {/* Comodidades destacadas y contacto directo */}
+                <div className="space-y-2.5 pt-2 border-t border-stone-200/60">
+                  <div className="flex items-center gap-2.5 text-xs text-stone-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff0000]" />
+                    <span>
+                      <strong className="text-stone-900 font-semibold">WhatsApp / Tel:</strong>{" "}
+                      <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-stone-900 hover:text-[#ff0000] font-bold">
+                        304 6485133
+                      </a>
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-xs text-stone-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff0000]" />
+                    <span>
+                      <strong className="text-stone-900 font-semibold">Horario:</strong> Closed · Opens 8 AM Fri
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-xs text-stone-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff0000]" />
+                    <span>Parqueadero vigilado y salas climatizadas (Vida Kids)</span>
+                  </div>
+                </div>
               </div>
 
-              {/* Minimalist CTA Buttons for directions and mapping */}
-              <div className="flex flex-wrap gap-3" id="navigation-cta-buttons">
+              {/* Botones de navegación GPS */}
+              <div className="flex flex-wrap gap-2.5 pt-4 border-t border-stone-200/60">
                 <button
                   onClick={handleMapRedirect}
-                  className="inline-flex items-center gap-2 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-medium px-5 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
-                  id="sketch-btn-horarios"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
                 >
-                  Ver Horarios (Waze)
+                  Abrir en Waze
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
                 <a
                   href="https://share.google/pvSe8QKyMZ2HoplYx"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-medium px-5 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
-                  id="sketch-btn-googlemaps"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
                 >
                   Google Maps
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
             </div>
 
-            {/* Right Side: Grid of 4 beautiful minimal cards representing the 4 schedule boxes */}
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6" id="schedules-cards-g">
-              
-              {/* Card 1: Domingos */}
-              <div 
-                className="bg-white border border-stone-150 rounded-2xl p-6 hover:border-[#ff0000] transition-all duration-300 group flex flex-col justify-between"
-                id="sch-box-1"
-              >
-                <div className="space-y-4 text-left">
-                  <div className="w-10 h-10 bg-stone-50 rounded-xl flex items-center justify-center text-stone-900 border border-stone-200/40">
-                    <Calendar className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold text-stone-400 tracking-wider">Reunión General</span>
-                    <h3 className="font-display font-black text-stone-950 text-lg leading-tight mt-1">Domingos</h3>
-                  </div>
-                </div>
-                <div className="mt-8 text-left">
-                  <span className="text-xs text-stone-400 block uppercase tracking-wide font-semibold">Horarios Dominicales</span>
-                  <span className="text-[#ff0000] font-bold text-xs sm:text-sm block mt-0.5 leading-relaxed">
-                    8:00 AM - 10:00 AM<br />
-                    10:30 AM - 12:00 PM
+            {/* Tarjeta Horarios de Reunión Semanales */}
+            <div className="lg:col-span-7 bg-white border border-stone-200/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xs" id="seccion-horarios">
+              <div className="space-y-5 text-left">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] uppercase font-bold text-stone-600 tracking-widest bg-stone-100 border border-stone-200 px-3 py-1 rounded-full">
+                    Horarios de Servicios
                   </span>
-                </div>
-              </div>
-
-              {/* Card 2: Miércoles */}
-              <div 
-                className="bg-white border border-stone-150 rounded-2xl p-6 hover:border-[#ff0000] transition-all duration-300 group flex flex-col justify-between"
-                id="sch-box-2"
-              >
-                <div className="space-y-4 text-left">
-                  <div className="w-10 h-10 bg-stone-50 rounded-xl flex items-center justify-center text-stone-900 border border-stone-200/40">
+                  <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200/80 flex items-center justify-center text-stone-900 shadow-2xs">
                     <Clock className="w-4 h-4" />
                   </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold text-stone-400 tracking-wider">Reunión de Enfoque</span>
-                    <h3 className="font-display font-black text-stone-950 text-lg leading-tight mt-1">Miércoles</h3>
-                  </div>
                 </div>
-                <div className="mt-8 text-left">
-                  <span className="text-xs text-stone-400 block uppercase tracking-wide font-semibold">Miércoles Explosivos</span>
-                  <span className="text-[#ff0000] font-bold text-base block mt-0.5">7:00 PM</span>
+
+                <div className="space-y-1">
+                  <h3 className="font-display font-black text-stone-950 text-xl sm:text-2xl tracking-tight">
+                    Nuestros Servicios Semanales
+                  </h3>
+                  <p className="text-stone-500 font-sans text-xs leading-relaxed">
+                    Te esperamos con los brazos abiertos en cada una de nuestras reuniones presenciales.
+                  </p>
+                </div>
+
+                {/* Grid de servicios presenciales */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                  <div className="p-4 rounded-2xl bg-stone-50 border border-stone-150 flex items-start justify-between gap-3">
+                    <div className="text-left">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Culto General</span>
+                      <strong className="text-stone-900 text-sm font-bold block mt-0.5">Domingos Familiares</strong>
+                      <span className="text-[#ff0000] text-xs font-bold block mt-1">8:00 AM y 10:30 AM</span>
+                    </div>
+                    <Calendar className="w-4 h-4 text-[#ff0000] shrink-0 mt-1" />
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-stone-50 border border-stone-150 flex items-start justify-between gap-3">
+                    <div className="text-left">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Reunión de Enfoque</span>
+                      <strong className="text-stone-900 text-sm font-bold block mt-0.5">Miércoles Explosivos</strong>
+                      <span className="text-[#ff0000] text-xs font-bold block mt-1">7:00 PM</span>
+                    </div>
+                    <Clock className="w-4 h-4 text-stone-700 shrink-0 mt-1" />
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-stone-50 border border-stone-150 flex items-start justify-between gap-3">
+                    <div className="text-left">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Intercesión</span>
+                      <strong className="text-stone-900 text-sm font-bold block mt-0.5">Oración Madrugada ADN</strong>
+                      <span className="text-[#ff0000] text-xs font-bold block mt-1">Martes 5:00 AM</span>
+                    </div>
+                    <Heart className="w-4 h-4 text-stone-700 shrink-0 mt-1" />
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-stone-50 border border-stone-150 flex items-start justify-between gap-3">
+                    <div className="text-left">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Atención Niños</span>
+                      <strong className="text-stone-900 text-sm font-bold block mt-0.5">Vida Kids</strong>
+                      <span className="text-[#ff0000] text-xs font-bold block mt-1">Domingos en Simultáneo</span>
+                    </div>
+                    <BookOpen className="w-4 h-4 text-stone-700 shrink-0 mt-1" />
+                  </div>
                 </div>
               </div>
 
-              {/* Card 3: Oración de madrugada ADN */}
-              <div 
-                className="bg-white border border-stone-150 rounded-2xl p-6 hover:border-[#ff0000] transition-all duration-300 group flex flex-col justify-between"
-                id="sch-box-3"
-              >
-                <div className="space-y-4 text-left">
-                  <div className="w-10 h-10 bg-stone-50 rounded-xl flex items-center justify-center text-stone-900 border border-stone-200/40">
-                    <Heart className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold text-stone-400 tracking-wider">Oración Especial</span>
-                    <h3 className="font-display font-black text-stone-950 text-lg leading-tight mt-1">Martes</h3>
-                  </div>
-                </div>
-                <div className="mt-8 text-left">
-                  <span className="text-xs text-stone-400 block uppercase tracking-wide font-semibold">Oración de madrugada ADN</span>
-                  <span className="text-[#ff0000] font-bold text-base block mt-0.5">5:00 AM</span>
-                </div>
+              <div className="pt-4 border-t border-stone-200/60">
+                <button
+                  onClick={() => onNavigate("servicios")}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-stone-100 hover:bg-stone-900 hover:text-white text-stone-900 font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 cursor-pointer"
+                >
+                  Ver Todos los Detalles de Servicios
+                  <ChevronRight className="w-3.5 h-3.5" />
+                </button>
               </div>
-
-              {/* Card 4: Vida Kids */}
-              <div 
-                className="bg-white border border-stone-150 rounded-2xl p-6 hover:border-[#ff0000] transition-all duration-300 group flex flex-col justify-between"
-                id="sch-box-4"
-              >
-                <div className="space-y-4 text-left">
-                  <div className="w-10 h-10 bg-stone-50 rounded-xl flex items-center justify-center text-stone-900 border border-stone-200/40">
-                    <BookOpen className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-bold text-stone-400 tracking-wider">Atención de Niños</span>
-                    <h3 className="font-display font-black text-stone-950 text-lg leading-tight mt-1">Vida Kids</h3>
-                  </div>
-                </div>
-                <div className="mt-8 text-left">
-                  <span className="text-xs text-stone-400 block uppercase tracking-wide font-semibold">Durante Servicios</span>
-                  <span className="text-[#ff0000] font-bold text-base block mt-0.5">Domingos</span>
-                </div>
-              </div>
-
             </div>
 
           </div>

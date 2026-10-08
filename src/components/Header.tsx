@@ -20,6 +20,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
 
   const navItems = [
     { id: "inicio", label: "Inicio" },
+    { id: "sedes", label: "Sedes" },
     { id: "servicios", label: "Servicios" },
     { id: "mensajes", label: "Mensajes" },
     { id: "contacto", label: "Contacto" },

@@ -7,16 +7,17 @@ import Messages from "./components/Messages";
 import Contact from "./components/Contact";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
+import SedeSurLanding from "./components/SedeSurLanding";
 
 export default function App() {
   const getInitialPage = () => {
     if (typeof window === "undefined") return "inicio";
     const path = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
-    if (["servicios", "mensajes", "contacto"].includes(path)) {
+    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur"].includes(path)) {
       return path;
     }
     const hash = window.location.hash.replace(/^#/, "").toLowerCase();
-    if (["servicios", "mensajes", "contacto"].includes(hash)) {
+    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur"].includes(hash)) {
       return hash;
     }
     return "inicio";
@@ -36,7 +37,7 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
-      if (["servicios", "mensajes", "contacto"].includes(path)) {
+      if (["servicios", "mensajes", "contacto", "sedes", "sede-sur"].includes(path)) {
         setActivePage(path);
       } else {
         setActivePage("inicio");
@@ -67,6 +68,9 @@ export default function App() {
             <Team />
           </>
         );
+      case "sedes":
+      case "sede-sur":
+        return <SedeSurLanding onNavigate={handleNavigate} />;
       case "servicios":
         return <Services />;
       case "mensajes":

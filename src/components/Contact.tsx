@@ -1,5 +1,5 @@
 import { useState, FormEvent } from "react";
-import { Send, MapPin, Mail, MessageCircle, CheckCircle, RefreshCw, AlertCircle } from "lucide-react";
+import { Send, MapPin, Mail, MessageCircle, CheckCircle, RefreshCw, AlertCircle, Phone, Globe, Clock } from "lucide-react";
 import { PrayerSubmission } from "../types";
 
 export default function Contact() {
@@ -62,19 +62,87 @@ export default function Contact() {
             </p>
 
             {/* Structured Info Lines */}
-            <div className="space-y-6" id="contact-info-details">
+            <div className="space-y-5" id="contact-info-details">
+              {/* Dirección */}
               <div className="flex gap-4 items-start">
                 <div className="w-10 h-10 rounded-xl bg-white border border-stone-200/50 flex items-center justify-center text-red-800 shrink-0 shadow-sm">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider">Dirección Auditorio</h4>
-                  <p className="text-stone-600 font-sans text-xs mt-1 leading-relaxed">
-                    Instalaciones de Reunión Central, Bogotá, Colombia.
+                  <p className="text-stone-700 font-sans text-xs mt-1 leading-relaxed font-semibold">
+                    Cl. 163 #18a-23, Bogotá
+                  </p>
+                  <p className="text-stone-400 font-sans text-[11px] leading-tight">
+                    Norte de Bogotá · Parqueadero vigilado
                   </p>
                 </div>
               </div>
 
+              {/* Teléfono / WhatsApp */}
+              <div className="flex gap-4 items-start">
+                <div className="w-10 h-10 rounded-xl bg-white border border-stone-200/50 flex items-center justify-center text-red-800 shrink-0 shadow-sm">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider">Línea Telefónica & WhatsApp</h4>
+                  <div className="flex items-center gap-2 mt-1">
+                    <a 
+                      href="tel:+573046485133" 
+                      className="text-stone-800 hover:text-[#ff0000] font-sans text-xs font-bold transition"
+                    >
+                      304 6485133
+                    </a>
+                    <span className="text-stone-300">·</span>
+                    <a 
+                      href="https://wa.me/573046485133?text=Hola,%20quisiera%20recibir%20informaci%C3%B3n%20de%20la%20iglesia%20Vida%20Plena%20Internacional" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[#ff0000] hover:underline font-sans text-[11px] font-semibold"
+                    >
+                      Escribir a WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Horario de Atención */}
+              <div className="flex gap-4 items-start">
+                <div className="w-10 h-10 rounded-xl bg-white border border-stone-200/50 flex items-center justify-center text-red-800 shrink-0 shadow-sm">
+                  <Clock className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider">Horario de Oficina</h4>
+                  <p className="text-stone-700 font-sans text-xs mt-1 leading-relaxed font-semibold">
+                    Closed · Opens 8 AM Fri
+                  </p>
+                  <p className="text-stone-400 font-sans text-[11px] leading-tight">
+                    Servicios: Dom 8:00 AM & 10:30 AM · Mié 7:00 PM
+                  </p>
+                </div>
+              </div>
+
+              {/* Sitio Web Oficial */}
+              <div className="flex gap-4 items-start">
+                <div className="w-10 h-10 rounded-xl bg-white border border-stone-200/50 flex items-center justify-center text-red-800 shrink-0 shadow-sm">
+                  <Globe className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider">Sitio Web</h4>
+                  <p className="text-stone-700 font-sans text-xs mt-1 leading-relaxed">
+                    <a 
+                      href="https://vidaplenainternacional.co" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-[#ff0000] font-bold hover:underline"
+                    >
+                      vidaplenainternacional.co
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              {/* Correo Electrónico */}
               <div className="flex gap-4 items-start">
                 <div className="w-10 h-10 rounded-xl bg-white border border-stone-200/50 flex items-center justify-center text-red-800 shrink-0 shadow-sm">
                   <Mail className="w-4 h-4" />
@@ -83,18 +151,6 @@ export default function Contact() {
                   <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider">Atención Virtual</h4>
                   <p className="text-stone-600 font-sans text-xs mt-1 leading-relaxed">
                     diasplenos09@gmail.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-white border border-stone-200/50 flex items-center justify-center text-red-800 shrink-0 shadow-sm">
-                  <MessageCircle className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider">Comunidad Virtual</h4>
-                  <p className="text-stone-600 font-sans text-xs mt-1 leading-relaxed">
-                    Únete a nuestras redes para transmisiones y boletines interactivos semanales.
                   </p>
                 </div>
               </div>

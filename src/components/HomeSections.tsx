@@ -198,7 +198,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   <div className="flex items-center gap-2.5 text-xs text-stone-700">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#ff0000]" />
                     <span>
-                      <strong className="text-stone-900 font-semibold">Horario:</strong> Closed · Opens 8 AM Fri
+                      <strong className="text-stone-900 font-semibold">Servicios:</strong> Dom 8:00 AM & 10:30 AM · Mié 7:00 PM
                     </span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs text-stone-700">

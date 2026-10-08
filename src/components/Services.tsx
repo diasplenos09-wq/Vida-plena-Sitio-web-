@@ -160,7 +160,7 @@ export default function Services() {
             <div>
               <h4 className="font-display font-bold text-sm text-stone-100">Instalaciones de Reunión · Cl. 163 #18a-23, Bogotá</h4>
               <p className="text-stone-400 text-xs mt-1 max-w-lg leading-relaxed">
-                Auditorio principal en Cl. 163 #18a-23, Bogotá. Teléfono / WhatsApp: <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff0000] font-semibold underline">304 6485133</a> · Atención: Closed · Opens 8 AM Fri · Parqueadero vigilado y salas infantiles.
+                Auditorio principal en Cl. 163 #18a-23, Bogotá. Teléfono / WhatsApp: <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff0000] font-semibold underline">304 6485133</a> · Servicios: Dom 8:00 AM & 10:30 AM · Mié 7:00 PM · Parqueadero vigilado y salas infantiles.
               </p>
             </div>
           </div>

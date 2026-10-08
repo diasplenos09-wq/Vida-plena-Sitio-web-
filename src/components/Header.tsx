@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, MapPin } from "lucide-react";
 
 interface HeaderProps {
   activeSection: string;
@@ -9,6 +9,8 @@ interface HeaderProps {
 export default function Header({ activeSection, onNavigate }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSedesOpen, setIsSedesOpen] = useState(false);
+  const [isMobileSedesOpen, setIsMobileSedesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +22,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
 
   const navItems = [
     { id: "inicio", label: "Inicio" },
-    { id: "sedes", label: "Sedes" },
+    { id: "sedes", label: "Sedes", hasDropdown: true },
     { id: "servicios", label: "Servicios" },
     { id: "mensajes", label: "Mensajes" },
     { id: "contacto", label: "Contacto" },
@@ -29,6 +31,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
   const handleNavClick = (id: string) => {
     onNavigate(id);
     setIsMobileMenuOpen(false);
+    setIsSedesOpen(false);
   };
 
   return (
@@ -60,6 +63,78 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1 bg-stone-100/80 p-1 rounded-full border border-stone-200/60" id="desktop-nav">
           {navItems.map((item) => {
+            if (item.hasDropdown) {
+              const isSedesActive = ["sedes", "sede-sur", "sede-melgar", "melgar", "sede-megar"].includes(activeSection);
+              return (
+                <div 
+                  key={item.id} 
+                  className="relative"
+                  onMouseEnter={() => setIsSedesOpen(true)}
+                  onMouseLeave={() => setIsSedesOpen(false)}
+                >
+                  <button
+                    onClick={() => setIsSedesOpen(!isSedesOpen)}
+                    className={`relative px-4 py-1.5 rounded-full font-sans text-xs font-medium tracking-wide transition-all duration-200 cursor-pointer inline-flex items-center gap-1 focus:outline-hidden ${
+                      isSedesActive
+                        ? "bg-stone-900 text-white shadow-xs font-semibold"
+                        : "text-stone-600 hover:text-stone-900 hover:bg-stone-200/50"
+                    }`}
+                    id="nav-link-sedes-dropdown"
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSedesOpen ? "rotate-180" : ""}`} />
+                  </button>
+
+                  {/* Dropdown Menu Desplegable de Sedes */}
+                  {isSedesOpen && (
+                    <div 
+                      className="absolute top-full left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-stone-200/80 p-2 z-50 flex flex-col gap-1 text-left animate-in fade-in slide-in-from-top-2 duration-150"
+                      id="sedes-dropdown-card"
+                    >
+                      <button
+                        onClick={() => handleNavClick("inicio")}
+                        className="w-full text-left p-2.5 rounded-xl hover:bg-stone-50 transition flex items-center justify-between group cursor-pointer"
+                      >
+                        <div>
+                          <strong className="text-stone-900 text-xs font-bold block group-hover:text-[#ff0000] transition">
+                            Sede Principal
+                          </strong>
+                          <span className="text-stone-500 text-[11px] block">Bogotá Norte (Cl. 163 #18a-23)</span>
+                        </div>
+                        <MapPin className="w-3.5 h-3.5 text-stone-400 group-hover:text-[#ff0000]" />
+                      </button>
+
+                      <button
+                        onClick={() => handleNavClick("sede-sur")}
+                        className="w-full text-left p-2.5 rounded-xl hover:bg-stone-50 transition flex items-center justify-between group cursor-pointer border-t border-stone-100"
+                      >
+                        <div>
+                          <strong className="text-stone-900 text-xs font-bold block group-hover:text-[#ff0000] transition">
+                            Sede Sur
+                          </strong>
+                          <span className="text-stone-500 text-[11px] block">Bogotá Sur (Reuniones de Fe)</span>
+                        </div>
+                        <MapPin className="w-3.5 h-3.5 text-stone-400 group-hover:text-[#ff0000]" />
+                      </button>
+
+                      <button
+                        onClick={() => handleNavClick("sede-melgar")}
+                        className="w-full text-left p-2.5 rounded-xl hover:bg-stone-50 transition flex items-center justify-between group cursor-pointer border-t border-stone-100"
+                      >
+                        <div>
+                          <strong className="text-stone-900 text-xs font-bold block group-hover:text-[#ff0000] transition">
+                            Sede Melgar
+                          </strong>
+                          <span className="text-stone-500 text-[11px] block">Tolima (Cultos & Retiros)</span>
+                        </div>
+                        <MapPin className="w-3.5 h-3.5 text-[#ff0000] group-hover:scale-110 transition" />
+                      </button>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             const isActive = activeSection === item.id;
             return (
               <button
@@ -108,7 +183,7 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
           id="mobile-drawer-backdrop"
         >
           <div
-            className="absolute top-0 left-0 right-0 bg-white border-b border-stone-200 shadow-xl px-6 py-8 flex flex-col gap-4 animate-in slide-in-from-top duration-300"
+            className="absolute top-0 left-0 right-0 bg-white border-b border-stone-200 shadow-xl px-6 py-8 flex flex-col gap-3 animate-in slide-in-from-top duration-300"
             onClick={(e) => e.stopPropagation()}
             id="mobile-drawer-content"
           >
@@ -116,6 +191,42 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
               Menú de Navegación
             </div>
             {navItems.map((item) => {
+              if (item.hasDropdown) {
+                return (
+                  <div key={item.id} className="flex flex-col">
+                    <button
+                      onClick={() => setIsMobileSedesOpen(!isMobileSedesOpen)}
+                      className="w-full text-left px-4 py-3 rounded-xl font-sans font-medium text-sm text-stone-700 hover:bg-stone-100 flex items-center justify-between cursor-pointer"
+                    >
+                      <span>Sedes</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileSedesOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    {isMobileSedesOpen && (
+                      <div className="pl-6 pr-2 py-2 flex flex-col gap-2 border-l-2 border-red-200 ml-4 my-1">
+                        <button
+                          onClick={() => handleNavClick("inicio")}
+                          className="text-left py-1 text-xs text-stone-600 hover:text-[#ff0000] font-medium"
+                        >
+                          · Sede Principal (Norte)
+                        </button>
+                        <button
+                          onClick={() => handleNavClick("sede-sur")}
+                          className="text-left py-1 text-xs text-stone-600 hover:text-[#ff0000] font-medium"
+                        >
+                          · Sede Sur (Bogotá)
+                        </button>
+                        <button
+                          onClick={() => handleNavClick("sede-melgar")}
+                          className="text-left py-1 text-xs text-stone-600 hover:text-[#ff0000] font-medium"
+                        >
+                          · Sede Melgar (Tolima)
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
               const isActive = activeSection === item.id;
               return (
                 <button

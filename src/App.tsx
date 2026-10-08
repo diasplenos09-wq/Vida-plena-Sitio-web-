@@ -8,16 +8,17 @@ import Contact from "./components/Contact";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
 import SedeSurLanding from "./components/SedeSurLanding";
+import SedeMelgarLanding from "./components/SedeMelgarLanding";
 
 export default function App() {
   const getInitialPage = () => {
     if (typeof window === "undefined") return "inicio";
     const path = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
-    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur"].includes(path)) {
+    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur", "sede-melgar", "melgar", "sede-megar"].includes(path)) {
       return path;
     }
     const hash = window.location.hash.replace(/^#/, "").toLowerCase();
-    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur"].includes(hash)) {
+    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur", "sede-melgar", "melgar", "sede-megar"].includes(hash)) {
       return hash;
     }
     return "inicio";
@@ -37,7 +38,7 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
-      if (["servicios", "mensajes", "contacto", "sedes", "sede-sur"].includes(path)) {
+      if (["servicios", "mensajes", "contacto", "sedes", "sede-sur", "sede-melgar", "melgar", "sede-megar"].includes(path)) {
         setActivePage(path);
       } else {
         setActivePage("inicio");
@@ -71,6 +72,10 @@ export default function App() {
       case "sedes":
       case "sede-sur":
         return <SedeSurLanding onNavigate={handleNavigate} />;
+      case "sede-melgar":
+      case "melgar":
+      case "sede-megar":
+        return <SedeMelgarLanding onNavigate={handleNavigate} />;
       case "servicios":
         return <Services />;
       case "mensajes":

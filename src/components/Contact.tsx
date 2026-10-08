@@ -112,11 +112,8 @@ export default function Contact() {
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider">Horario de Oficina</h4>
+                  <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider">Horario de Servicios</h4>
                   <p className="text-stone-700 font-sans text-xs mt-1 leading-relaxed font-semibold">
-                    Closed · Opens 8 AM Fri
-                  </p>
-                  <p className="text-stone-400 font-sans text-[11px] leading-tight">
                     Servicios: Dom 8:00 AM & 10:30 AM · Mié 7:00 PM
                   </p>
                 </div>

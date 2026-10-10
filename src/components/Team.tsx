@@ -84,34 +84,34 @@ export default function Team() {
               return (
                 <div
                   key={pastor.id}
-                  className="bg-white border border-stone-200/60 rounded-[32px] p-6 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                  className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-200 flex flex-col justify-between"
                   id={`pastor-card-${pastor.id}`}
                 >
                   <div>
                     {/* Icon Card Top Wrapper */}
                     <div className="flex items-center gap-4 mb-6" id={`pastor-header-${pastor.id}`}>
-                      <div className="w-16 h-16 rounded-2xl bg-stone-100 flex items-center justify-center shadow-xs shrink-0 select-none">
+                      <div className="w-14 h-14 rounded-xl bg-slate-100 flex items-center justify-center shadow-2xs shrink-0 select-none">
                         {getPastorIcon(pastor.id)}
                       </div>
                       <div>
-                        <h4 className="text-stone-900 font-display font-bold text-lg leading-tight">{pastor.name}</h4>
-                        <span className="text-red-800 font-sans text-xs font-semibold uppercase tracking-wide inline-block mt-0.5">
+                        <h4 className="text-slate-900 font-sans font-bold text-lg leading-tight">{pastor.name}</h4>
+                        <span className="text-red-700 font-sans text-xs font-semibold uppercase tracking-wide inline-block mt-0.5">
                           {pastor.role}
                         </span>
                       </div>
                     </div>
 
                     {/* Biography description */}
-                    <p className="text-stone-600 font-sans text-xs sm:text-sm leading-relaxed mb-6 px-1">
+                    <p className="text-slate-600 font-sans text-xs sm:text-sm leading-relaxed mb-6 px-1">
                       {pastor.description}
                     </p>
                   </div>
 
                   {/* Quote */}
                   {pastor.quote && (
-                    <div className="bg-stone-50 border border-stone-100 p-4 rounded-xl flex gap-3 items-start" id={`pastor-quote-${pastor.id}`}>
+                    <div className="bg-slate-50 border border-slate-100 p-4 rounded-xl flex gap-3 items-start" id={`pastor-quote-${pastor.id}`}>
                       <Quote className="w-4 h-4 text-red-600 fill-red-600/10 shrink-0 mt-1 rotate-180" />
-                      <p className="text-[11px] sm:text-xs text-stone-500 font-serif italic leading-relaxed">
+                      <p className="text-[11px] sm:text-xs text-slate-600 font-sans italic leading-relaxed">
                         "{pastor.quote}"
                       </p>
                     </div>
@@ -124,16 +124,16 @@ export default function Team() {
 
         {/* Organization Statement (Trust Banner Below) */}
         <div
-          className="mt-20 bg-stone-950 text-stone-100 rounded-[36px] p-8 sm:p-12 border border-stone-900 shadow-md flex flex-col justify-center text-center items-center gap-6"
+          className="mt-16 bg-slate-950 text-slate-100 rounded-3xl p-8 sm:p-12 border border-slate-900 shadow-md flex flex-col justify-center text-center items-center gap-5"
           id="church-faith-banner"
         >
-          <div className="w-12 h-12 rounded-full bg-stone-900 flex items-center justify-center text-[#ff0000] mb-2">
+          <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-red-500 mb-1">
             <Award className="w-6 h-6" />
           </div>
-          <h4 className="font-sans text-2xl font-bold tracking-tight text-white max-w-xl leading-normal">
+          <h4 className="font-sans text-xl sm:text-2xl font-bold tracking-tight text-white max-w-xl leading-relaxed">
             "El ladrón no viene sino para hurtar y matar y destruir; yo he venido para que tengan vida, y para que la tengan en abundancia."
           </h4>
-          <span className="font-display font-medium text-[10px] text-stone-400 uppercase tracking-widest leading-none">
+          <span className="font-sans font-semibold text-[10px] text-slate-400 uppercase tracking-widest leading-none">
             — Juan 10:10 (Fundamento de Vida Plena)
           </span>
           <p className="text-stone-300 font-sans text-xs max-w-lg leading-relaxed">
@@ -141,12 +141,12 @@ export default function Team() {
           </p>
 
           {/* Red Google Maps button & White Contact click trigger */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-4 w-full" id="theology-button-container">
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-3 w-full" id="theology-button-container">
             <a
               href="https://share.google/pvSe8QKyMZ2HoplYx"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-sans text-xs font-medium px-6 py-2.5 rounded-lg transition-all duration-200 shadow-xs cursor-pointer"
               id="theology-btn-maps"
             >
               Google Maps
@@ -158,7 +158,7 @@ export default function Team() {
                   el.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="inline-flex items-center gap-2 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-sans text-xs font-medium px-6 py-2.5 rounded-lg transition-all duration-200 shadow-xs cursor-pointer border border-slate-700"
               id="theology-btn-contact"
             >
               Contáctanos

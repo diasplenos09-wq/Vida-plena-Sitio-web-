@@ -51,7 +51,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
               
               {/* Badges de Bienvenida y Selector Rápido */}
               <div className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 bg-[#ff0000] text-white px-4 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xs">
+                <div className="inline-flex items-center gap-2 bg-[#dc2626] text-white px-4 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xs">
                   <span className="w-2.5 h-2.5 bg-white rounded-full animate-pulse" />
                   BIENVENIDOS A CASA · SEDE MELGAR
                 </div>
@@ -73,7 +73,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                 </h2>
 
                 <h1 
-                  className="font-sans text-base sm:text-lg lg:text-xl font-bold tracking-wide text-[#ff0000] uppercase"
+                  className="font-sans text-base sm:text-lg lg:text-xl font-bold tracking-wide text-[#dc2626] uppercase"
                   id="sede-melgar-seo-h1"
                 >
                   Sede Melgar · Comunidad Cristiana & Retiros de Fe
@@ -92,7 +92,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                     const target = document.getElementById("sede-melgar-horarios");
                     target?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
+                  className="bg-[#dc2626] hover:bg-stone-900 text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
                 >
                   Ver Horarios Sede Melgar
                 </button>
@@ -102,7 +102,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                     const target = document.getElementById("sede-melgar-ubicacion");
                     target?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
+                  className="bg-stone-900 hover:bg-[#dc2626] text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
                 >
                   Cómo Llegar desde Bogotá
                 </button>
@@ -130,7 +130,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                 </div>
                 <div className="text-left">
                   <span className="text-[10px] uppercase font-bold text-stone-400 block tracking-wider">Enfoque</span>
-                  <span className="text-[#ff0000] font-bold text-xs sm:text-sm">Cultos & Retiros</span>
+                  <span className="text-[#dc2626] font-bold text-xs sm:text-sm">Cultos & Retiros</span>
                 </div>
               </div>
 
@@ -163,7 +163,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
       <section className="py-12 bg-stone-50 border-b border-stone-200/80 px-6 md:px-12 lg:px-20" id="selector-tres-sedes">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
-            <span className="text-[10px] uppercase font-bold text-[#ff0000] tracking-widest block">
+            <span className="text-[10px] uppercase font-bold text-[#dc2626] tracking-widest block">
               Red de Sedes Vida Plena Internacional
             </span>
             <h3 className="font-display font-bold text-2xl sm:text-3xl text-stone-950 tracking-tight">
@@ -219,11 +219,11 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
             </div>
 
             {/* Sede Melgar (Activa) */}
-            <div className="bg-white border-2 border-[#ff0000] rounded-3xl p-6 text-left space-y-4 shadow-md relative">
-              <div className="absolute -top-3 right-5 bg-[#ff0000] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-0.5 rounded-full shadow-xs">
+            <div className="bg-white border-2 border-[#dc2626] rounded-3xl p-6 text-left space-y-4 shadow-md relative">
+              <div className="absolute -top-3 right-5 bg-[#dc2626] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-0.5 rounded-full shadow-xs">
                 Estás Viendo Sede Melgar
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#ff0000] bg-red-50 border border-red-100 px-3 py-1 rounded-full inline-block">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#dc2626] bg-red-50 border border-red-100 px-3 py-1 rounded-full inline-block">
                 Tolima · Melgar
               </span>
               <div>
@@ -233,7 +233,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
               <p className="text-stone-500 text-xs leading-relaxed">
                 Cultos dominicales, campamentos de jóvenes, retiros de parejas y descanso espiritual.
               </p>
-              <div className="inline-flex items-center gap-1.5 text-[#ff0000] font-bold text-xs pt-1">
+              <div className="inline-flex items-center gap-1.5 text-[#dc2626] font-bold text-xs pt-1">
                 <span>Información y horarios abajo</span>
                 <ArrowRight className="w-3 h-3" />
               </div>
@@ -250,7 +250,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
         <div className="max-w-7xl mx-auto space-y-12">
           
           <div className="max-w-3xl text-left space-y-3">
-            <span className="text-[11px] uppercase font-bold text-[#ff0000] tracking-widest block">
+            <span className="text-[11px] uppercase font-bold text-[#dc2626] tracking-widest block">
               Horarios Sede Melgar
             </span>
             <h2 className="text-stone-950 font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight uppercase">
@@ -264,9 +264,9 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Tarjeta 1: Domingos en Melgar */}
-            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#ff0000] transition">
+            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#dc2626] transition">
               <div className="space-y-4">
-                <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-[#ff0000] shadow-2xs">
+                <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-[#dc2626] shadow-2xs">
                   <Calendar className="w-5 h-5" />
                 </div>
                 <div>
@@ -279,12 +279,12 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
               </div>
               <div className="pt-4 border-t border-stone-200">
                 <span className="text-[11px] text-stone-500 uppercase tracking-wide block">Horario Matutino</span>
-                <span className="text-[#ff0000] font-bold text-base block mt-0.5">10:00 AM</span>
+                <span className="text-[#dc2626] font-bold text-base block mt-0.5">10:00 AM</span>
               </div>
             </div>
 
             {/* Tarjeta 2: Noche de Alabanza y Fuego */}
-            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#ff0000] transition">
+            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#dc2626] transition">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-stone-900 shadow-2xs">
                   <Clock className="w-5 h-5" />
@@ -299,12 +299,12 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
               </div>
               <div className="pt-4 border-t border-stone-200">
                 <span className="text-[11px] text-stone-500 uppercase tracking-wide block">Horario Nocturno</span>
-                <span className="text-[#ff0000] font-bold text-base block mt-0.5">6:30 PM</span>
+                <span className="text-[#dc2626] font-bold text-base block mt-0.5">6:30 PM</span>
               </div>
             </div>
 
             {/* Tarjeta 3: Retiros y Campamentos */}
-            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#ff0000] transition">
+            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#dc2626] transition">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-stone-900 shadow-2xs">
                   <Trees className="w-5 h-5" />
@@ -324,9 +324,9 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
             </div>
 
             {/* Tarjeta 4: Vida Kids Melgar */}
-            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#ff0000] transition">
+            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#dc2626] transition">
               <div className="space-y-4">
-                <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-[#ff0000] shadow-2xs">
+                <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-[#dc2626] shadow-2xs">
                   <Heart className="w-5 h-5" />
                 </div>
                 <div>
@@ -339,7 +339,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
               </div>
               <div className="pt-4 border-t border-stone-200">
                 <span className="text-[11px] text-stone-500 uppercase tracking-wide block">Durante los Servicios</span>
-                <span className="text-[#ff0000] font-bold text-sm block mt-0.5">Domingos Simultáneos</span>
+                <span className="text-[#dc2626] font-bold text-sm block mt-0.5">Domingos Simultáneos</span>
               </div>
             </div>
 
@@ -357,7 +357,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
             
             {/* Panel de Información de Llegada */}
             <div className="lg:col-span-6 text-left space-y-6">
-              <span className="text-[10px] uppercase font-bold text-[#ff0000] tracking-widest bg-red-50 border border-red-100 px-3.5 py-1 rounded-full inline-block">
+              <span className="text-[10px] uppercase font-bold text-[#dc2626] tracking-widest bg-red-50 border border-red-100 px-3.5 py-1 rounded-full inline-block">
                 Ubicación Campestre
               </span>
               <h2 className="text-stone-950 font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
@@ -369,7 +369,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
 
               <div className="space-y-4 pt-2">
                 <div className="flex gap-3.5 items-start bg-white p-4 rounded-2xl border border-stone-200/80 shadow-2xs">
-                  <MapPin className="w-5 h-5 text-[#ff0000] shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#dc2626] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-stone-900 text-sm">Melgar, Tolima, Colombia</h4>
                     <p className="text-stone-600 text-xs mt-0.5 leading-relaxed">
@@ -379,7 +379,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                 </div>
 
                 <div className="flex gap-3.5 items-start bg-white p-4 rounded-2xl border border-stone-200/80 shadow-2xs">
-                  <Compass className="w-5 h-5 text-[#ff0000] shrink-0 mt-0.5" />
+                  <Compass className="w-5 h-5 text-[#dc2626] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-stone-900 text-sm">Fácil Acceso desde Bogotá</h4>
                     <p className="text-stone-600 text-xs mt-0.5">
@@ -389,11 +389,11 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                 </div>
 
                 <div className="flex gap-3.5 items-start bg-white p-4 rounded-2xl border border-stone-200/80 shadow-2xs">
-                  <Phone className="w-5 h-5 text-[#ff0000] shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-[#dc2626] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-stone-900 text-sm">Línea de Coordinación Sede Melgar</h4>
                     <p className="text-stone-600 text-xs mt-0.5">
-                      Tel / WhatsApp: <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-bold hover:text-[#ff0000]">304 6485133</a>
+                      Tel / WhatsApp: <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-bold hover:text-[#dc2626]">304 6485133</a>
                     </p>
                   </div>
                 </div>
@@ -403,7 +403,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
               <div className="flex flex-wrap gap-3 pt-3">
                 <button
                   onClick={handleWazeClick}
-                  className="inline-flex items-center gap-2 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-semibold px-5 py-3 rounded-full transition shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-stone-900 hover:bg-[#dc2626] text-white font-sans text-xs font-semibold px-5 py-3 rounded-full transition shadow-xs cursor-pointer"
                 >
                   Abrir en Waze (Ruta Melgar)
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -411,7 +411,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
 
                 <button
                   onClick={handleMapsClick}
-                  className="inline-flex items-center gap-2 bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-semibold px-5 py-3 rounded-full transition shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-[#dc2626] hover:bg-stone-900 text-white font-sans text-xs font-semibold px-5 py-3 rounded-full transition shadow-xs cursor-pointer"
                 >
                   Abrir en Google Maps
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -455,7 +455,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Ej. Juan Carlos Méndez"
-                        className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#ff0000] focus:ring-1 focus:ring-[#ff0000] transition"
+                        className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition"
                       />
                     </div>
 
@@ -470,7 +470,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="Ej. 310 987 6543"
-                          className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#ff0000] focus:ring-1 focus:ring-[#ff0000] transition"
+                          className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition"
                         />
                       </div>
                       <div>
@@ -482,7 +482,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                           value={formData.city}
                           onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                           placeholder="Ej. Bogotá / Melgar"
-                          className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#ff0000] focus:ring-1 focus:ring-[#ff0000] transition"
+                          className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition"
                         />
                       </div>
                     </div>
@@ -496,14 +496,14 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Escribe tu mensaje, número de asistentes o consulta sobre Sede Melgar..."
-                        className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#ff0000] focus:ring-1 focus:ring-[#ff0000] transition resize-none"
+                        className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-semibold py-3 rounded-xl transition duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs disabled:opacity-50"
+                      className="w-full bg-[#dc2626] hover:bg-stone-900 text-white font-sans text-xs font-semibold py-3 rounded-xl transition duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs disabled:opacity-50"
                     >
                       {submitting ? "Enviando información..." : "Enviar a Equipo Pastoral Sede Melgar"}
                       <Send className="w-3.5 h-3.5" />
@@ -523,7 +523,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
          ========================================================================= */}
       <section className="py-14 px-6 md:px-12 lg:px-20 bg-stone-900 text-white text-center">
         <div className="max-w-4xl mx-auto space-y-4">
-          <span className="text-[10px] uppercase font-bold tracking-widest text-[#ff0000] bg-white/10 px-3.5 py-1 rounded-full inline-block">
+          <span className="text-[10px] uppercase font-bold tracking-widest text-[#dc2626] bg-white/10 px-3.5 py-1 rounded-full inline-block">
             Vida Plena Internacional
           </span>
           <h3 className="font-display font-black text-2xl sm:text-3xl tracking-tight text-white">
@@ -535,7 +535,7 @@ export default function SedeMelgarLanding({ onNavigate }: SedeMelgarLandingProps
           <div className="flex flex-wrap gap-3 justify-center pt-2">
             <button
               onClick={() => onNavigate("inicio")}
-              className="bg-white hover:bg-[#ff0000] hover:text-white text-stone-950 font-sans text-xs font-semibold px-6 py-2.5 rounded-full transition cursor-pointer shadow-xs"
+              className="bg-white hover:bg-[#dc2626] hover:text-white text-stone-950 font-sans text-xs font-semibold px-6 py-2.5 rounded-full transition cursor-pointer shadow-xs"
             >
               Ver Sede Principal Norte
             </button>

@@ -24,7 +24,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <span className="font-light text-stone-400">INTERNACIONAL</span>
             </h2>
             <p className="text-stone-300 font-sans text-xs sm:text-sm leading-relaxed max-w-md">
-              En Iglesia Vida Plena Internacional caminamos juntos como familia, confiando en Dios, fortaleciendo la fe y llevando un mensaje de esperanza a cada generación.
+              Como <strong className="font-semibold text-white">Iglesia Cristiana</strong> caminamos juntos en Vida Plena Internacional como familia, siendo luz entre las <strong className="font-semibold text-white">iglesias norte de Bogotá</strong> para fortalecer la fe y llevar un mensaje de esperanza a cada generación.
             </p>
           </div>
 
@@ -34,31 +34,31 @@ export default function Footer({ onNavigate }: FooterProps) {
             <div className="flex flex-wrap items-center justify-center gap-x-5 sm:gap-x-6 gap-y-2 text-xs sm:text-sm font-bold uppercase tracking-wider">
               <button 
                 onClick={() => onNavigate("inicio")} 
-                className="text-[#ff0000] border-b-2 border-[#ff0000] pb-1 cursor-pointer transition font-bold"
+                className="text-red-500 border-b-2 border-red-500 pb-1 cursor-pointer transition font-bold"
               >
                 inicio
               </button>
               <button 
                 onClick={() => onNavigate("sedes")} 
-                className="text-white hover:text-[#ff0000] pb-1 cursor-pointer transition font-bold"
+                className="text-white hover:text-red-400 pb-1 cursor-pointer transition font-bold"
               >
                 sedes
               </button>
               <button 
                 onClick={() => onNavigate("servicios")} 
-                className="text-white hover:text-[#ff0000] pb-1 cursor-pointer transition font-bold"
+                className="text-white hover:text-red-400 pb-1 cursor-pointer transition font-bold"
               >
                 servicios
               </button>
               <button 
                 onClick={() => onNavigate("mensajes")} 
-                className="text-white hover:text-[#ff0000] pb-1 cursor-pointer transition font-bold"
+                className="text-white hover:text-red-400 pb-1 cursor-pointer transition font-bold"
               >
                 mensajes
               </button>
               <button 
                 onClick={() => onNavigate("contacto")} 
-                className="text-white hover:text-[#ff0000] pb-1 cursor-pointer transition font-bold"
+                className="text-white hover:text-red-400 pb-1 cursor-pointer transition font-bold"
               >
                 contacto
               </button>
@@ -70,7 +70,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 href="https://www.facebook.com/p/Vida-Plena-Internacional-100068673755930/?locale=es_LA" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-9 h-9 bg-white hover:bg-[#ff0000] hover:text-white rounded-lg flex items-center justify-center text-stone-950 transition-colors duration-200 shadow-xs"
+                className="w-9 h-9 bg-white hover:bg-red-600 hover:text-white rounded-lg flex items-center justify-center text-slate-950 transition-colors duration-200 shadow-xs"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4 fill-current stroke-none" />
@@ -79,7 +79,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 href="https://www.instagram.com/vidaplenainternacional/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-9 h-9 bg-white hover:bg-[#ff0000] hover:text-white rounded-lg flex items-center justify-center text-stone-950 transition-colors duration-200 shadow-xs"
+                className="w-9 h-9 bg-white hover:bg-red-600 hover:text-white rounded-lg flex items-center justify-center text-slate-950 transition-colors duration-200 shadow-xs"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -88,7 +88,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 href="https://www.youtube.com/@ComunidadCristianaVidaPlena" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-9 h-9 bg-white hover:bg-[#ff0000] hover:text-white rounded-lg flex items-center justify-center text-stone-950 transition-colors duration-200 shadow-xs"
+                className="w-9 h-9 bg-white hover:bg-red-600 hover:text-white rounded-lg flex items-center justify-center text-slate-950 transition-colors duration-200 shadow-xs"
                 aria-label="YouTube"
               >
                 <Youtube className="w-4 h-4 fill-current stroke-none" />

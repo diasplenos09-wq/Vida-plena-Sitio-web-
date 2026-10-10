@@ -129,7 +129,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-stone-950/20 group-hover/video:bg-stone-950/35 transition-colors duration-300 flex items-center justify-center">
-          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#ff0000] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover/video:scale-110 active:scale-95 transition-transform duration-300">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#dc2626] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover/video:scale-110 active:scale-95 transition-transform duration-300">
             <PlayCircle className="w-7 h-7 sm:w-8 sm:h-8 fill-white stroke-none" />
           </div>
         </div>
@@ -153,7 +153,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
               comunidad cristiana Bogotá
             </h2>
             <p className="text-stone-600 font-sans text-xs sm:text-sm lg:text-base leading-relaxed">
-              Cada semana nos reunimos para adorar, aprender y crecer juntos como familia en Dios. Conoce nuestros horarios de reunión y comodidades en nuestra sede norte.
+              Cada semana nos reunimos como <strong className="font-medium text-stone-800">Iglesia Cristiana</strong> para adorar, aprender y crecer juntos como familia en Dios. Conoce nuestros horarios de reunión y comodidades en nuestra sede norte.
             </p>
           </div>
 
@@ -164,10 +164,10 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
             <div className="lg:col-span-5 bg-stone-50 border border-stone-200/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6" id="seccion-auditorio">
               <div className="space-y-5 text-left">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] uppercase font-bold text-[#ff0000] tracking-widest bg-red-50 border border-red-100 px-3 py-1 rounded-full">
+                  <span className="text-[10px] uppercase font-bold text-[#dc2626] tracking-widest bg-red-50 border border-red-100 px-3 py-1 rounded-full">
                     Auditorio Presencial
                   </span>
-                  <div className="w-8 h-8 rounded-full bg-white border border-stone-200/80 flex items-center justify-center text-[#ff0000] shadow-2xs">
+                  <div className="w-8 h-8 rounded-full bg-white border border-stone-200/80 flex items-center justify-center text-[#dc2626] shadow-2xs">
                     <MapPin className="w-4 h-4" />
                   </div>
                 </div>
@@ -187,22 +187,22 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                 {/* Comodidades destacadas y contacto directo */}
                 <div className="space-y-2.5 pt-2 border-t border-stone-200/60">
                   <div className="flex items-center gap-2.5 text-xs text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff0000]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626]" />
                     <span>
                       <strong className="text-stone-900 font-semibold">WhatsApp / Tel:</strong>{" "}
-                      <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-stone-900 hover:text-[#ff0000] font-bold">
+                      <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-stone-900 hover:text-[#dc2626] font-bold">
                         304 6485133
                       </a>
                     </span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff0000]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626]" />
                     <span>
                       <strong className="text-stone-900 font-semibold">Servicios:</strong> Dom 8:00 AM & 10:30 AM · Mié 7:00 PM
                     </span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#ff0000]" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626]" />
                     <span>Parqueadero vigilado y salas climatizadas (Vida Kids)</span>
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
               <div className="flex flex-wrap gap-2.5 pt-4 border-t border-stone-200/60">
                 <button
                   onClick={handleMapRedirect}
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-[#dc2626] text-white font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
                 >
                   Abrir en Waze
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -221,7 +221,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   href="https://share.google/pvSe8QKyMZ2HoplYx"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#dc2626] hover:bg-stone-900 text-white font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
                 >
                   Google Maps
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -256,16 +256,16 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                     <div className="text-left">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Culto General</span>
                       <strong className="text-stone-900 text-sm font-bold block mt-0.5">Domingos Familiares</strong>
-                      <span className="text-[#ff0000] text-xs font-bold block mt-1">8:00 AM y 10:30 AM</span>
+                      <span className="text-[#dc2626] text-xs font-bold block mt-1">8:00 AM y 10:30 AM</span>
                     </div>
-                    <Calendar className="w-4 h-4 text-[#ff0000] shrink-0 mt-1" />
+                    <Calendar className="w-4 h-4 text-[#dc2626] shrink-0 mt-1" />
                   </div>
 
                   <div className="p-4 rounded-2xl bg-stone-50 border border-stone-150 flex items-start justify-between gap-3">
                     <div className="text-left">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Reunión de Enfoque</span>
                       <strong className="text-stone-900 text-sm font-bold block mt-0.5">Miércoles Explosivos</strong>
-                      <span className="text-[#ff0000] text-xs font-bold block mt-1">7:00 PM</span>
+                      <span className="text-[#dc2626] text-xs font-bold block mt-1">7:00 PM</span>
                     </div>
                     <Clock className="w-4 h-4 text-stone-700 shrink-0 mt-1" />
                   </div>
@@ -274,7 +274,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                     <div className="text-left">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Intercesión</span>
                       <strong className="text-stone-900 text-sm font-bold block mt-0.5">Oración Madrugada ADN</strong>
-                      <span className="text-[#ff0000] text-xs font-bold block mt-1">Martes 5:00 AM</span>
+                      <span className="text-[#dc2626] text-xs font-bold block mt-1">Martes 5:00 AM</span>
                     </div>
                     <Heart className="w-4 h-4 text-stone-700 shrink-0 mt-1" />
                   </div>
@@ -283,7 +283,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                     <div className="text-left">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Atención Niños</span>
                       <strong className="text-stone-900 text-sm font-bold block mt-0.5">Vida Kids</strong>
-                      <span className="text-[#ff0000] text-xs font-bold block mt-1">Domingos en Simultáneo</span>
+                      <span className="text-[#dc2626] text-xs font-bold block mt-1">Domingos en Simultáneo</span>
                     </div>
                     <BookOpen className="w-4 h-4 text-stone-700 shrink-0 mt-1" />
                   </div>
@@ -312,7 +312,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
             
             {/* Left Column: Left-justified from middle to left (lg:col-span-6) */}
             <div className="lg:col-span-6 text-left space-y-6" id="featured-sermon-text">
-              <span className="text-[10px] uppercase font-bold text-[#ff0000] tracking-widest bg-red-50 px-3 py-1 rounded-full inline-block">
+              <span className="text-[10px] uppercase font-bold text-[#dc2626] tracking-widest bg-red-50 px-3 py-1 rounded-full inline-block">
                 Único Mensaje Prominente
               </span>
               <h2 className="text-stone-950 font-display font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
@@ -324,13 +324,13 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
 
               <div className="space-y-4 pt-2 text-left" id="house-blend-highlights">
                 <div className="flex items-start gap-3">
-                  <div className="w-2.5 h-2.5 bg-[#ff0000] rounded-full mt-1.5 shrink-0" />
+                  <div className="w-2.5 h-2.5 bg-[#dc2626] rounded-full mt-1.5 shrink-0" />
                   <p className="text-[11px] sm:text-xs text-stone-600 text-left">
                     <strong className="text-stone-900 font-semibold">Enseñanza Práctica:</strong> Sin sermones cansados; explicamos la Biblia en lenguaje sencillo y aplicable a tu lunes por la mañana.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-2.5 h-2.5 bg-[#ff0000] rounded-full mt-1.5 shrink-0" />
+                  <div className="w-2.5 h-2.5 bg-[#dc2626] rounded-full mt-1.5 shrink-0" />
                   <p className="text-[11px] sm:text-xs text-stone-600 text-left">
                     <strong className="text-stone-900 font-semibold">Poder Devocional:</strong> Activa el poder protector del Espíritu Santo y libera el potencial oculto en tu caminar ministerial.
                   </p>
@@ -340,7 +340,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
               <div className="flex items-center gap-4 pt-2 text-left" id="house-blend-ctas">
                 <button
                   onClick={() => onNavigate("mensajes")}
-                  className="bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
+                  className="bg-stone-900 hover:bg-[#dc2626] text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
                 >
                   Ver Prédicas en Línea
                 </button>
@@ -389,7 +389,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                                 referrerPolicy="no-referrer"
                               />
                               <div className="absolute inset-0 bg-stone-950/30 group-hover:bg-stone-950/45 transition-colors duration-300 flex items-center justify-center">
-                                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#ff0000] text-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 active:scale-95 transition-transform duration-200">
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#dc2626] text-white rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 active:scale-95 transition-transform duration-200">
                                   <Play className="w-6 h-6 sm:w-7 sm:h-7 fill-white stroke-none ml-1" />
                                 </div>
                               </div>
@@ -456,7 +456,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                           href={`https://www.youtube.com/watch?v=${activeVideo.id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="shrink-0 text-stone-500 hover:text-[#ff0000] text-xs flex items-center gap-1 font-medium transition-colors"
+                          className="shrink-0 text-stone-500 hover:text-[#dc2626] text-xs flex items-center gap-1 font-medium transition-colors"
                           title="Abrir en YouTube"
                         >
                           <span className="hidden sm:inline">YouTube</span>
@@ -476,7 +476,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                               }}
                               className={`h-1.5 transition-all duration-300 rounded-full cursor-pointer ${
                                 idx === currentVideoIdx
-                                  ? "w-7 bg-[#ff0000]"
+                                  ? "w-7 bg-[#dc2626]"
                                   : "w-2 bg-stone-300 hover:bg-stone-400"
                               }`}
                               title={`Ir al video ${idx + 1}: ${video.title}`}
@@ -525,7 +525,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
           {/* Black heading panel row */}
           <div className="bg-stone-950 text-white rounded-3xl p-8 sm:p-12 mb-16 text-left flex flex-col md:flex-row md:items-center justify-between gap-6" id="blog-header-badge-row">
             <div className="space-y-2">
-              <span className="text-[10px] text-[#ff0000] uppercase font-black tracking-widest">
+              <span className="text-[10px] text-[#dc2626] uppercase font-black tracking-widest">
                 Comunidad Activa
               </span>
               <h2 className="text-white font-display font-black text-3xl sm:text-4xl tracking-tight uppercase leading-none">
@@ -538,7 +538,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
             
             <button 
               onClick={() => onNavigate("mensajes")}
-              className="inline-flex items-center gap-2 bg-white hover:bg-[#ff0000] hover:text-white text-stone-900 font-sans text-xs font-medium px-5 py-2.5 rounded-full transition-all duration-200 shrink-0 cursor-pointer shadow-xs"
+              className="inline-flex items-center gap-2 bg-white hover:bg-[#dc2626] hover:text-white text-stone-900 font-sans text-xs font-medium px-5 py-2.5 rounded-full transition-all duration-200 shrink-0 cursor-pointer shadow-xs"
             >
               Ver Todas las Prédicas
               <ChevronRight className="w-3.5 h-3.5" />
@@ -555,7 +555,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   {renderVideoCover("WKzvTfoh4_U", "Restaurando Familias con el Poder de Dios")}
                 </div>
                 <div className="px-1">
-                  <span className="text-[9px] uppercase font-bold text-[#ff0000] tracking-wider block">Mensaje Dominical</span>
+                  <span className="text-[9px] uppercase font-bold text-[#dc2626] tracking-wider block">Mensaje Dominical</span>
                   <h3 className="font-sans font-bold text-stone-950 text-xs sm:text-sm mt-1 leading-snug">
                     Restaurando Familias con el Poder de Dios
                   </h3>
@@ -570,7 +570,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   {renderVideoCover("Xwk_yjISVn4", "Estableciendo el Reino de Dios en la Tierra")}
                 </div>
                 <div className="px-1">
-                  <span className="text-[9px] uppercase font-bold text-[#ff0000] tracking-wider block">Devoción Activa</span>
+                  <span className="text-[9px] uppercase font-bold text-[#dc2626] tracking-wider block">Devoción Activa</span>
                   <h3 className="font-sans font-bold text-stone-950 text-xs sm:text-sm mt-1 leading-snug">
                     Estableciendo el Reino de Dios en la Tierra
                   </h3>
@@ -585,7 +585,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   {renderVideoCover("QDE2lt1yONQ", "Caminando con Valentía y Esperanza Diaria")}
                 </div>
                 <div className="px-1">
-                  <span className="text-[9px] uppercase font-bold text-[#ff0000] tracking-wider block">Crecimiento de Fe</span>
+                  <span className="text-[9px] uppercase font-bold text-[#dc2626] tracking-wider block">Crecimiento de Fe</span>
                   <h3 className="font-sans font-bold text-stone-950 text-xs sm:text-sm mt-1 leading-snug">
                     Caminando con Valentía y Esperanza Diaria
                   </h3>
@@ -606,7 +606,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
             id="callout-card"
           >
             {/* Background elements to ensure depth */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#ff0000]/10 rounded-full filter blur-3xl opacity-20 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-80 h-80 bg-[#dc2626]/10 rounded-full filter blur-3xl opacity-20 pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-stone-900/60 rounded-full filter blur-2xl opacity-40 pointer-events-none" />
 
             {/* Grey pill container with white text and solid red bullet */}
@@ -614,7 +614,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
               className="inline-flex items-center gap-2 bg-[#292524] text-[#e7e5e4] border border-stone-800 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-8 relative z-10"
               id="callout-pill"
             >
-              <span className="w-2.5 h-2.5 bg-[#ff0000] rounded-full animate-pulse" />
+              <span className="w-2.5 h-2.5 bg-[#dc2626] rounded-full animate-pulse" />
               BIENVENIDOS A CASA
             </div>
 
@@ -625,14 +625,14 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
 
             {/* Paragraph: Tu generosidad... */}
             <p className="text-stone-300 font-sans text-xs sm:text-sm leading-relaxed max-w-xl mb-10 relative z-10">
-              Tu generosidad nos ayuda a seguir impactando vidas en nuestra comunidad y más allá. Gracias por sembrar en buena tierra.
+              Tu generosidad nos ayuda a seguir impactando vidas en nuestra comunidad y más allá, consolidándonos como un referente entre las <strong className="font-semibold text-white">iglesias norte de Bogotá</strong>. Gracias por sembrar en buena tierra.
             </p>
 
             {/* Two Action Buttons side by side (Image 5 exact design) */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto relative z-10" id="callout-actions">
               <button
                 onClick={() => setShowDonateModal(true)}
-                className="w-full sm:w-auto bg-[#ff0000] hover:bg-[#dd0000] text-white font-sans text-xs font-medium px-7 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
+                className="w-full sm:w-auto bg-[#dc2626] hover:bg-[#b91c1c] text-white font-sans text-xs font-medium px-7 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
                 id="btn-donate-trigger"
               >
                 Donar en línea
@@ -676,7 +676,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
               className="relative w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-stone-250 overflow-hidden z-10"
               id="donate-container"
             >
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#ff0000]" />
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#dc2626]" />
 
               <h3 className="font-display font-bold text-xl text-stone-950 mb-2">Sembrar con Generosidad</h3>
               <p className="text-stone-500 text-xs mb-6">Tu donación libre ayuda a expandir el Reino de Dios en Colombia y restaurar familias.</p>
@@ -688,7 +688,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   </div>
                   <h4 className="font-display font-bold text-base text-stone-900">¡Muchas Gracias por tu Ofrenda!</h4>
                   <p className="text-xs text-stone-500 leading-relaxed max-w-xs mx-auto">
-                    Tu transacción de fe simulada de <span className="font-bold text-[#ff0000]">${Number(customAmount || donateAmount).toLocaleString()} COP</span> ha sido procesada. ¡Que Dios multiplique tu abundante generosidad en buena tierra!
+                    Tu transacción de fe simulada de <span className="font-bold text-[#dc2626]">${Number(customAmount || donateAmount).toLocaleString()} COP</span> ha sido procesada. ¡Que Dios multiplique tu abundante generosidad en buena tierra!
                   </p>
                 </div>
               ) : (
@@ -735,7 +735,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                           setDonateAmount("");
                         }}
                         placeholder="Ej. 150000"
-                        className="w-full bg-stone-50 border border-stone-200 rounded-xl pl-10 pr-4 py-3 text-xs text-stone-800 focus:outline-hidden focus:border-[#ff0000] focus:ring-1 focus:ring-[#ff0000]"
+                        className="w-full bg-stone-50 border border-stone-200 rounded-xl pl-10 pr-4 py-3 text-xs text-stone-800 focus:outline-hidden focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626]"
                       />
                     </div>
                   </div>
@@ -764,7 +764,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                     </button>
                     <button
                       type="submit"
-                      className="bg-[#ff0000] hover:bg-[#dd0000] text-white font-medium px-5 py-2 rounded-lg text-xs transition-colors cursor-pointer shadow-xs"
+                      className="bg-[#dc2626] hover:bg-[#b91c1c] text-white font-medium px-5 py-2 rounded-lg text-xs transition-colors cursor-pointer shadow-xs"
                     >
                       Ofrendar ahora
                     </button>

@@ -70,7 +70,7 @@ export default function Services() {
       case "Sparkles":
         return <Sparkles className="w-5 h-5 text-yellow-500" />;
       case "Heart":
-        return <Heart className="w-5 h-5 text-[#ff0000] fill-red-500/10" />;
+        return <Heart className="w-5 h-5 text-red-600 fill-red-500/10" />;
       default:
         return <Clock className="w-5 h-5 text-stone-500" />;
     }
@@ -160,7 +160,7 @@ export default function Services() {
             <div>
               <h4 className="font-display font-bold text-sm text-stone-100">Instalaciones de Reunión · Cl. 163 #18a-23, Bogotá</h4>
               <p className="text-stone-400 text-xs mt-1 max-w-lg leading-relaxed">
-                Auditorio principal en Cl. 163 #18a-23, Bogotá. Teléfono / WhatsApp: <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ff0000] font-semibold underline">304 6485133</a> · Servicios: Dom 8:00 AM & 10:30 AM · Mié 7:00 PM · Parqueadero vigilado y salas infantiles.
+                Auditorio principal en Cl. 163 #18a-23, Bogotá. Teléfono / WhatsApp: <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-white hover:text-red-400 font-semibold underline">304 6485133</a> · Servicios: Dom 8:00 AM & 10:30 AM · Mié 7:00 PM · Parqueadero vigilado y salas infantiles.
               </p>
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function Services() {
             href="https://share.google/pvSe8QKyMZ2HoplYx"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full md:w-auto bg-[#ff0000] hover:bg-[#dd0000] text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full flex items-center justify-center gap-2 transition duration-200 shrink-0 shadow-xs"
+            className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-sans text-xs font-medium px-6 py-2.5 rounded-lg flex items-center justify-center gap-2 transition duration-200 shrink-0 shadow-xs"
             id="gps-navigation"
           >
             Cómo Llegar (Google Maps)

@@ -52,7 +52,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
               
               {/* Badge de Bienvenida Sede Sur y Switcher de Sedes */}
               <div className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 bg-[#ff0000] text-white px-4 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xs">
+                <div className="inline-flex items-center gap-2 bg-[#dc2626] text-white px-4 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xs">
                   <span className="w-2.5 h-2.5 bg-white rounded-full animate-pulse" />
                   BIENVENIDOS A CASA · SEDE SUR
                 </div>
@@ -79,7 +79,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
                 </h2>
 
                 <h1 
-                  className="font-sans text-base sm:text-lg lg:text-xl font-bold tracking-wide text-[#ff0000] uppercase"
+                  className="font-sans text-base sm:text-lg lg:text-xl font-bold tracking-wide text-[#dc2626] uppercase"
                   id="sede-sur-seo-h1"
                 >
                   Sede Sur · Iglesia Cristiana en Bogotá
@@ -98,7 +98,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
                     const target = document.getElementById("sede-sur-horarios");
                     target?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
+                  className="bg-[#dc2626] hover:bg-stone-900 text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
                 >
                   Ver Horarios Sede Sur
                 </button>
@@ -108,7 +108,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
                     const target = document.getElementById("sede-sur-ubicacion");
                     target?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
+                  className="bg-stone-900 hover:bg-[#dc2626] text-white font-sans text-xs sm:text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer shadow-xs whitespace-nowrap"
                 >
                   Cómo Llegar
                 </button>
@@ -136,7 +136,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
                 </div>
                 <div className="text-left">
                   <span className="text-[10px] uppercase font-bold text-stone-400 block tracking-wider">Cultos</span>
-                  <span className="text-[#ff0000] font-bold text-xs sm:text-sm">Dom y Mié</span>
+                  <span className="text-[#dc2626] font-bold text-xs sm:text-sm">Dom y Mié</span>
                 </div>
               </div>
 
@@ -169,7 +169,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
       <section className="py-12 bg-stone-50 border-b border-stone-200/80 px-6 md:px-12 lg:px-20" id="selector-sedes-banner">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-8 space-y-2">
-            <span className="text-[10px] uppercase font-bold text-[#ff0000] tracking-widest block">
+            <span className="text-[10px] uppercase font-bold text-[#dc2626] tracking-widest block">
               Nuestras Sedes en Bogotá
             </span>
             <h3 className="font-display font-bold text-2xl sm:text-3xl text-stone-950 tracking-tight">
@@ -207,15 +207,15 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
             </div>
 
             {/* Tarjeta Sede Sur (Activa) */}
-            <div className="bg-white border-2 border-[#ff0000] rounded-3xl p-6 sm:p-8 text-left space-y-5 shadow-md relative">
-              <div className="absolute -top-3 right-6 bg-[#ff0000] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-0.5 rounded-full shadow-xs">
+            <div className="bg-white border-2 border-[#dc2626] rounded-3xl p-6 sm:p-8 text-left space-y-5 shadow-md relative">
+              <div className="absolute -top-3 right-6 bg-[#dc2626] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-0.5 rounded-full shadow-xs">
                 Estás Viendo Sede Sur
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#ff0000] bg-red-50 border border-red-100 px-3 py-1 rounded-full">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#dc2626] bg-red-50 border border-red-100 px-3 py-1 rounded-full">
                   Sede Sur · Bogotá
                 </span>
-                <span className="text-xs text-[#ff0000] font-semibold">Comunidad Sur</span>
+                <span className="text-xs text-[#dc2626] font-semibold">Comunidad Sur</span>
               </div>
               <div>
                 <h4 className="font-display font-bold text-stone-950 text-xl">Sede Sur</h4>
@@ -224,7 +224,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
               <p className="text-stone-500 text-xs leading-relaxed">
                 Reuniones de avivamiento y grupos de vida preparados especialmente para las familias del sur.
               </p>
-              <div className="inline-flex items-center gap-2 text-[#ff0000] font-bold text-xs">
+              <div className="inline-flex items-center gap-2 text-[#dc2626] font-bold text-xs">
                 <span>Información y horarios detallados abajo</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </div>
@@ -241,7 +241,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
         <div className="max-w-7xl mx-auto space-y-12">
           
           <div className="max-w-3xl text-left space-y-3">
-            <span className="text-[11px] uppercase font-bold text-[#ff0000] tracking-widest block">
+            <span className="text-[11px] uppercase font-bold text-[#dc2626] tracking-widest block">
               Horarios Sede Sur
             </span>
             <h2 className="text-stone-950 font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight uppercase">
@@ -255,9 +255,9 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Tarjeta 1: Domingos Familiares Sede Sur */}
-            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#ff0000] transition">
+            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#dc2626] transition">
               <div className="space-y-4">
-                <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-[#ff0000] shadow-2xs">
+                <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-[#dc2626] shadow-2xs">
                   <Calendar className="w-5 h-5" />
                 </div>
                 <div>
@@ -270,12 +270,12 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
               </div>
               <div className="pt-4 border-t border-stone-200">
                 <span className="text-[11px] text-stone-500 uppercase tracking-wide block">Horario Principal</span>
-                <span className="text-[#ff0000] font-bold text-base block mt-0.5">10:00 AM</span>
+                <span className="text-[#dc2626] font-bold text-base block mt-0.5">10:00 AM</span>
               </div>
             </div>
 
             {/* Tarjeta 2: Miércoles de Poder Sede Sur */}
-            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#ff0000] transition">
+            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#dc2626] transition">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-stone-900 shadow-2xs">
                   <Clock className="w-5 h-5" />
@@ -290,12 +290,12 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
               </div>
               <div className="pt-4 border-t border-stone-200">
                 <span className="text-[11px] text-stone-500 uppercase tracking-wide block">Horario Nocturno</span>
-                <span className="text-[#ff0000] font-bold text-base block mt-0.5">7:00 PM</span>
+                <span className="text-[#dc2626] font-bold text-base block mt-0.5">7:00 PM</span>
               </div>
             </div>
 
             {/* Tarjeta 3: Grupos de Vida en el Sur */}
-            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#ff0000] transition">
+            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#dc2626] transition">
               <div className="space-y-4">
                 <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-stone-900 shadow-2xs">
                   <Users className="w-5 h-5" />
@@ -315,9 +315,9 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
             </div>
 
             {/* Tarjeta 4: Plenitud Kids Sede Sur */}
-            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#ff0000] transition">
+            <div className="bg-stone-50 border border-stone-200 rounded-3xl p-6 flex flex-col justify-between space-y-6 text-left hover:border-[#dc2626] transition">
               <div className="space-y-4">
-                <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-[#ff0000] shadow-2xs">
+                <div className="w-10 h-10 rounded-2xl bg-white border border-stone-200 flex items-center justify-center text-[#dc2626] shadow-2xs">
                   <Heart className="w-5 h-5" />
                 </div>
                 <div>
@@ -330,7 +330,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
               </div>
               <div className="pt-4 border-t border-stone-200">
                 <span className="text-[11px] text-stone-500 uppercase tracking-wide block">Durante los Servicios</span>
-                <span className="text-[#ff0000] font-bold text-sm block mt-0.5">Domingos Simultáneos</span>
+                <span className="text-[#dc2626] font-bold text-sm block mt-0.5">Domingos Simultáneos</span>
               </div>
             </div>
 
@@ -348,7 +348,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
             
             {/* Panel de Información de Llegada */}
             <div className="lg:col-span-6 text-left space-y-6">
-              <span className="text-[10px] uppercase font-bold text-[#ff0000] tracking-widest bg-red-50 border border-red-100 px-3.5 py-1 rounded-full inline-block">
+              <span className="text-[10px] uppercase font-bold text-[#dc2626] tracking-widest bg-red-50 border border-red-100 px-3.5 py-1 rounded-full inline-block">
                 Ubicación y Acceso
               </span>
               <h2 className="text-stone-950 font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
@@ -360,7 +360,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
 
               <div className="space-y-4 pt-2">
                 <div className="flex gap-3.5 items-start bg-white p-4 rounded-2xl border border-stone-200/80 shadow-2xs">
-                  <MapPin className="w-5 h-5 text-[#ff0000] shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#dc2626] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-stone-900 text-sm">Sector Bogotá Sur</h4>
                     <p className="text-stone-600 text-xs mt-0.5 leading-relaxed">
@@ -370,17 +370,17 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
                 </div>
 
                 <div className="flex gap-3.5 items-start bg-white p-4 rounded-2xl border border-stone-200/80 shadow-2xs">
-                  <Phone className="w-5 h-5 text-[#ff0000] shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-[#dc2626] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-stone-900 text-sm">Línea de Coordinación Sede Sur</h4>
                     <p className="text-stone-600 text-xs mt-0.5">
-                      Tel / WhatsApp: <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-bold hover:text-[#ff0000]">304 6485133</a>
+                      Tel / WhatsApp: <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-stone-900 font-bold hover:text-[#dc2626]">304 6485133</a>
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-3.5 items-start bg-white p-4 rounded-2xl border border-stone-200/80 shadow-2xs">
-                  <Clock className="w-5 h-5 text-[#ff0000] shrink-0 mt-0.5" />
+                  <Clock className="w-5 h-5 text-[#dc2626] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-bold text-stone-900 text-sm">Horario de Puertas Abiertas</h4>
                     <p className="text-stone-600 text-xs mt-0.5">
@@ -394,7 +394,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
               <div className="flex flex-wrap gap-3 pt-3">
                 <button
                   onClick={handleWazeClick}
-                  className="inline-flex items-center gap-2 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-semibold px-5 py-3 rounded-full transition shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-stone-900 hover:bg-[#dc2626] text-white font-sans text-xs font-semibold px-5 py-3 rounded-full transition shadow-xs cursor-pointer"
                 >
                   Abrir en Waze (Ruta Sur)
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -402,7 +402,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
 
                 <button
                   onClick={handleMapsClick}
-                  className="inline-flex items-center gap-2 bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-semibold px-5 py-3 rounded-full transition shadow-xs cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-[#dc2626] hover:bg-stone-900 text-white font-sans text-xs font-semibold px-5 py-3 rounded-full transition shadow-xs cursor-pointer"
                 >
                   Abrir en Google Maps
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -446,7 +446,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Ej. Andrés Ramírez"
-                        className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#ff0000] focus:ring-1 focus:ring-[#ff0000] transition"
+                        className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition"
                       />
                     </div>
 
@@ -461,7 +461,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="Ej. 300 123 4567"
-                          className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#ff0000] focus:ring-1 focus:ring-[#ff0000] transition"
+                          className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition"
                         />
                       </div>
                       <div>
@@ -473,7 +473,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
                           value={formData.neighborhood}
                           onChange={(e) => setFormData({ ...formData, neighborhood: e.target.value })}
                           placeholder="Ej. Kennedy, Tunjuelito, Bosa"
-                          className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#ff0000] focus:ring-1 focus:ring-[#ff0000] transition"
+                          className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition"
                         />
                       </div>
                     </div>
@@ -487,14 +487,14 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Escribe tu mensaje o motivo de oración..."
-                        className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#ff0000] focus:ring-1 focus:ring-[#ff0000] transition resize-none"
+                        className="w-full bg-stone-50 border border-stone-200 rounded-xl px-4 py-2.5 text-xs text-stone-800 focus:outline-hidden focus:border-[#dc2626] focus:ring-1 focus:ring-[#dc2626] transition resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-[#ff0000] hover:bg-stone-900 text-white font-sans text-xs font-semibold py-3 rounded-xl transition duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs disabled:opacity-50"
+                      className="w-full bg-[#dc2626] hover:bg-stone-900 text-white font-sans text-xs font-semibold py-3 rounded-xl transition duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-xs disabled:opacity-50"
                     >
                       {submitting ? "Enviando información..." : "Enviar a Equipo Pastoral Sede Sur"}
                       <Send className="w-3.5 h-3.5" />
@@ -514,7 +514,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
          ========================================================================= */}
       <section className="py-14 px-6 md:px-12 lg:px-20 bg-stone-900 text-white text-center">
         <div className="max-w-4xl mx-auto space-y-4">
-          <span className="text-[10px] uppercase font-bold tracking-widest text-[#ff0000] bg-white/10 px-3.5 py-1 rounded-full inline-block">
+          <span className="text-[10px] uppercase font-bold tracking-widest text-[#dc2626] bg-white/10 px-3.5 py-1 rounded-full inline-block">
             Vida Plena Internacional
           </span>
           <h3 className="font-display font-black text-2xl sm:text-3xl tracking-tight text-white">
@@ -526,7 +526,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
           <div className="flex flex-wrap gap-3 justify-center pt-2">
             <button
               onClick={() => onNavigate("inicio")}
-              className="bg-white hover:bg-[#ff0000] hover:text-white text-stone-950 font-sans text-xs font-semibold px-6 py-2.5 rounded-full transition cursor-pointer shadow-xs"
+              className="bg-white hover:bg-[#dc2626] hover:text-white text-stone-950 font-sans text-xs font-semibold px-6 py-2.5 rounded-full transition cursor-pointer shadow-xs"
             >
               Ver Sede Principal Norte
             </button>

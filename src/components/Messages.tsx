@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Search, Flame, Shield, Heart, Clock, PlayCircle, Video, Eye, Calendar, ArrowRight } from "lucide-react";
+import { Search, Flame, Shield, Heart, Clock, PlayCircle, Video, Calendar, X, ExternalLink } from "lucide-react";
 
 interface VideoSermon {
   id: string;
@@ -14,6 +14,50 @@ interface VideoSermon {
 }
 
 const SERMONS_DATABASE: VideoSermon[] = [
+  {
+    id: "sermon-cuando-el-mundo-tiembla",
+    title: "Cuando el Mundo Tiembla - Ap. Oscar Bernier",
+    embedUrl: "https://www.youtube.com/embed/O3u3pkkjIpw?si=TGtlqBqpppr2d8hx",
+    category: "temor",
+    tagLabel: "Vencer Temor",
+    duration: "49:15",
+    preachedDate: "26 de Agosto, 2026",
+    views: "1,890 vistas",
+    description: "Inspiradora prédica del Ap. Oscar Bernier: cuando las circunstancias sacuden lo que te rodea, la paz de Dios sostiene tu vida y edifica tu fe inamovible."
+  },
+  {
+    id: "sermon-esta-escasez-no-durara",
+    title: "Esta Escasez No Durará - Ap. Oscar Bernier",
+    embedUrl: "https://www.youtube.com/embed/T8uEU14ENKk?si=TaqwIfsqwGrHjIjt",
+    category: "fe",
+    tagLabel: "Aumentar Fe",
+    duration: "54:20",
+    preachedDate: "04 de Octubre, 2026",
+    views: "2,350 vistas",
+    description: "Un mensaje profético y revelador del Ap. Oscar Bernier sobre cómo Dios rompe los tiempos de dificultad y desata bendición abundante sobre tu hogar."
+  },
+  {
+    id: "sermon-padre-nuestro-parte-2",
+    title: "Padre Nuestro | Parte 2 - Ap. Oscar Bernier",
+    embedUrl: "https://www.youtube.com/embed/EntC30B0av8?si=woZvgXhR1m7a1-a_",
+    category: "fe",
+    tagLabel: "Aumentar Fe",
+    duration: "48:10",
+    preachedDate: "07 de Octubre, 2026",
+    views: "1,720 vistas",
+    description: "Segunda parte de la serie magistral del Padre Nuestro impartida por el Ap. Oscar Bernier: profundizando en la comunión diaria, perdón y la presencia del Padre."
+  },
+  {
+    id: "sermon-padre-nuestro-parte-1",
+    title: "Padre Nuestro | Parte 1 - Ap. Oscar Bernier",
+    embedUrl: "https://www.youtube.com/embed/1r67-asl4XE?si=f0fSfD-W2NEDfky_",
+    category: "fe",
+    tagLabel: "Aumentar Fe",
+    duration: "51:35",
+    preachedDate: "30 de Septiembre, 2026",
+    views: "1,980 vistas",
+    description: "Primera parte de la enseñanza sobre el modelo de oración del Padre Nuestro por el Ap. Oscar Bernier: redescubriendo el diseño divino que transforma vidas."
+  },
   {
     id: "sermon-viajeras-al-futuro",
     title: "Viajeras al Futuro | Mujeres Plenas",
@@ -74,6 +118,7 @@ const SERMONS_DATABASE: VideoSermon[] = [
 export default function Messages() {
   const [activeTab, setActiveTab] = useState<string>("todos");
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
 
   const categories = [
     { id: "todos", label: "Todos los Videos", icon: Video },
@@ -136,10 +181,10 @@ export default function Messages() {
                 onClick={() => {
                   setActiveTab(cat.id);
                 }}
-                className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full font-sans text-xs font-medium tracking-wide transition-all duration-200 cursor-pointer focus:outline-hidden ${
+                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg font-sans text-xs font-medium tracking-normal transition-all duration-150 cursor-pointer focus:outline-hidden ${
                   isSelected
-                    ? "bg-[#ff0000] text-white shadow-xs"
-                    : "bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-stone-50"
+                    ? "bg-red-600 text-white shadow-xs font-semibold"
+                    : "bg-white border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50"
                 }`}
                 id={`cat-btn-${cat.id}`}
               >
@@ -152,111 +197,130 @@ export default function Messages() {
 
         {/* Conditional rendering for videos results */}
         {filteredSermons.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="filtered-videos-grid">
-            {filteredSermons.map((sermon) => (
-              <div
-                key={sermon.id}
-                className="bg-white border border-stone-200/85 rounded-[28px] overflow-hidden p-4 shadow-3xs hover:shadow-md hover:border-red-500/25 transition-all duration-300 flex flex-col justify-between"
-                id={`video-card-${sermon.id}`}
-              >
-                <div>
-                  {/* YouTube Thumbnail Cover (Avoiding Copyright iframe block) */}
-                  {(() => {
-                    const videoId = sermon.embedUrl.includes("/embed/")
-                      ? sermon.embedUrl.split("/embed/")[1].split("?")[0]
-                      : "";
-                    const thumbnailUrl = videoId 
-                      ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
-                      : "https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=600&auto=format&fit=crop";
-                    const watchUrl = videoId
-                      ? `https://www.youtube.com/watch?v=${videoId}`
-                      : sermon.embedUrl;
-                    
-                    return (
-                      <a
-                        href={watchUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group/video block aspect-video w-full rounded-2xl overflow-hidden bg-stone-950 shadow-sm mb-4 select-none relative cursor-pointer"
-                        title="Ver sermón en YouTube"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="filtered-videos-grid">
+            {filteredSermons.map((sermon) => {
+              const videoId = sermon.embedUrl.includes("/embed/")
+                ? sermon.embedUrl.split("/embed/")[1].split("?")[0]
+                : "";
+              const thumbnailUrl = videoId 
+                ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+                : "https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=600&auto=format&fit=crop";
+              const watchUrl = videoId
+                ? `https://www.youtube.com/watch?v=${videoId}`
+                : sermon.embedUrl;
+              const isPlaying = playingVideoId === sermon.id;
+
+              return (
+                <div
+                  key={sermon.id}
+                  className="bg-white border border-slate-200/90 rounded-2xl overflow-hidden p-4 shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-200 flex flex-col justify-between"
+                  id={`video-card-${sermon.id}`}
+                >
+                  <div>
+                    {/* Video Player or Thumbnail */}
+                    {isPlaying ? (
+                      <div className="aspect-video w-full rounded-xl overflow-hidden bg-black shadow-xs mb-4 relative">
+                        <iframe
+                          className="w-full h-full"
+                          src={`${sermon.embedUrl}${sermon.embedUrl.includes("?") ? "&" : "?"}autoplay=1`}
+                          title={sermon.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setPlayingVideoId(null)}
+                          className="absolute top-2 right-2 bg-slate-900/80 hover:bg-slate-900 text-white text-[10px] font-sans px-2.5 py-1 rounded-md flex items-center gap-1 shadow-xs cursor-pointer transition-colors"
+                          title="Cerrar video"
+                        >
+                          <X className="w-3 h-3" />
+                          <span>Cerrar</span>
+                        </button>
+                      </div>
+                    ) : (
+                      <div 
+                        onClick={() => setPlayingVideoId(sermon.id)}
+                        className="group/video block aspect-video w-full rounded-xl overflow-hidden bg-slate-950 shadow-xs mb-4 select-none relative cursor-pointer"
+                        title="Reproducir video"
                       >
                         {/* High-res Video Cover Image */}
                         <img 
                           src={thumbnailUrl} 
                           alt={sermon.title}
-                          className="w-full h-full object-cover group-hover/video:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover group-hover/video:scale-105 transition-transform duration-300"
                           referrerPolicy="no-referrer"
                         />
                         {/* Overlay with Dark Gradient & Play Symbol */}
-                        <div className="absolute inset-0 bg-stone-950/25 group-hover/video:bg-stone-950/40 transition-colors duration-300 flex items-center justify-center">
-                          <div className="w-14 h-14 bg-[#ff0000] text-white rounded-full flex items-center justify-center shadow-lg transform group-hover/video:scale-110 active:scale-95 transition-transform duration-300">
-                            <PlayCircle className="w-8 h-8 fill-white stroke-none" />
+                        <div className="absolute inset-0 bg-slate-950/25 group-hover/video:bg-slate-950/40 transition-colors duration-200 flex items-center justify-center">
+                          <div className="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center shadow-md transform group-hover/video:scale-110 active:scale-95 transition-transform duration-200">
+                            <PlayCircle className="w-7 h-7 fill-white stroke-none" />
                           </div>
                         </div>
-                        {/* "Ver en YouTube" tooltip */}
-                        <div className="absolute bottom-2.5 right-2.5 bg-stone-900/95 backdrop-blur-xs text-[9px] text-white font-bold tracking-wider uppercase px-2.5 py-1.2 rounded-md opacity-0 group-hover/video:opacity-100 transition-opacity duration-300">
-                          Ver en YouTube
+                        {/* Click to play badge */}
+                        <div className="absolute bottom-2.5 right-2.5 bg-slate-900/95 backdrop-blur-xs text-[9px] text-white font-semibold tracking-wider uppercase px-2 py-0.5 rounded-md opacity-90 group-hover/video:opacity-100 transition-opacity duration-200">
+                          Reproducir
                         </div>
-                      </a>
-                    );
-                  })()}
+                      </div>
+                    )}
 
-                  {/* Metadata labels row */}
-                  <div className="flex items-center justify-between text-[10px] text-stone-400 font-bold uppercase tracking-wider mb-2 px-1">
-                    <span className="text-[#ff0000] font-bold">{sermon.tagLabel}</span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-stone-405" />
-                      {sermon.duration}
+                    {/* Metadata labels row */}
+                    <div className="flex items-center justify-between text-[10px] text-slate-400 font-semibold uppercase tracking-wider mb-2 px-1">
+                      <span className="text-red-600 font-bold">{sermon.tagLabel}</span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3 h-3 text-slate-400" />
+                        {sermon.duration}
+                      </span>
+                    </div>
+
+                    {/* Title and description */}
+                    <div className="px-1 text-left space-y-1.5">
+                      <h3 className="font-sans font-semibold text-slate-900 text-sm leading-snug">
+                        {sermon.title}
+                      </h3>
+                      <p className="text-slate-500 font-sans text-xs leading-relaxed">
+                        {sermon.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Card Action footer layout */}
+                  <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between px-1" id={`card-footer-${sermon.id}`}>
+                    <span className="text-[10px] text-slate-400 font-medium font-sans flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                      {sermon.preachedDate}
                     </span>
-                  </div>
-
-                  {/* Title and description */}
-                  <div className="px-1 text-left space-y-2">
-                    <h3 className="font-sans font-bold text-stone-950 text-sm leading-snug">
-                      {sermon.title}
-                    </h3>
-                    <p className="text-stone-500 font-sans text-xs leading-relaxed">
-                      {sermon.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card Action footer layout */}
-                <div className="mt-6 pt-4 border-t border-stone-100 flex items-center justify-between px-1" id={`card-footer-${sermon.id}`}>
-                  <span className="text-[10px] text-stone-450 font-medium font-sans flex items-center gap-1">
-                    <Calendar className="w-3.5 h-3.5 text-stone-400" />
-                    {sermon.preachedDate}
-                  </span>
-                  {(() => {
-                    const videoId = sermon.embedUrl.includes("/embed/")
-                      ? sermon.embedUrl.split("/embed/")[1].split("?")[0]
-                      : "";
-                    const watchUrl = videoId
-                      ? `https://www.youtube.com/watch?v=${videoId}`
-                      : sermon.embedUrl;
-                    return (
+                    <div className="flex items-center gap-3">
+                      <button 
+                        type="button"
+                        onClick={() => setPlayingVideoId(isPlaying ? null : sermon.id)}
+                        className="inline-flex items-center gap-1 text-[10px] uppercase font-bold text-red-600 tracking-wider hover:underline cursor-pointer"
+                        title={isPlaying ? "Cerrar reproductor" : "Reproducir mensaje aquí"}
+                      >
+                        {isPlaying ? "Cerrar" : "Ver aquí"}
+                        <PlayCircle className="w-3.5 h-3.5" />
+                      </button>
                       <a 
                         href={watchUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-[10px] uppercase font-bold text-[#ff0000] tracking-wider hover:underline"
-                        title="Ver sermón en YouTube"
+                        className="inline-flex items-center gap-1 text-[10px] text-slate-400 hover:text-slate-700 tracking-wider font-semibold transition-colors"
+                        title="Abrir en YouTube"
                       >
-                        Ver ahora
-                        <PlayCircle className="w-3.5 h-3.5" />
+                        <ExternalLink className="w-3 h-3" />
                       </a>
-                    );
-                  })()}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         ) : (
           /* Empty state when query matches absolutely no video */
-          <div className="text-center py-20 bg-stone-50 rounded-[32px] border border-stone-200/50 max-w-lg mx-auto" id="search-empty-state">
+          <div className="text-center py-16 bg-slate-50 rounded-2xl border border-slate-200/80 max-w-lg mx-auto" id="search-empty-state">
             <span className="text-3xl">🍿</span>
-            <h4 className="font-sans font-bold text-stone-900 mt-4">Mensajes no encontrados</h4>
-            <p className="text-stone-500 text-xs mt-2 max-w-xs mx-auto">
+            <h4 className="font-sans font-bold text-slate-900 mt-4">Mensajes no encontrados</h4>
+            <p className="text-slate-500 text-xs mt-2 max-w-xs mx-auto">
               No encontramos conferencias de fe para "{searchQuery}". Inténtelo buscando con 'familia', 'fe' o 'temor'.
             </p>
             <button
@@ -264,7 +328,7 @@ export default function Messages() {
                 setActiveTab("todos");
                 setSearchQuery("");
               }}
-              className="mt-6 bg-stone-900 hover:bg-[#ff0000] text-white font-sans text-xs font-medium px-5 py-2 rounded-full transition-colors cursor-pointer shadow-xs"
+              className="mt-5 bg-slate-900 hover:bg-red-600 text-white font-sans text-xs font-medium px-5 py-2 rounded-lg transition-colors cursor-pointer shadow-xs"
             >
               Restablecer Filtros
             </button>

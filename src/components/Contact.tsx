@@ -58,7 +58,7 @@ export default function Contact() {
               Estamos para Escucharte y Orar por Ti
             </h2>
             <p className="text-stone-500 font-sans text-xs sm:text-sm leading-relaxed mb-8">
-              En Vida Plena Internacional valoramos cada vida de nuestra congregación. Si estás pasando por una dificultad, necesitas consejería de los pastores William y Claudia Arbeláez, o quieres compartir un testimonio de victoria, usa esta sección. Creemos en el milagro del clamor unido.
+              En Vida Plena Internacional valoramos cada vida de nuestra congregación, distinguiéndonos entre las <strong className="font-medium text-stone-800">iglesias norte de Bogotá</strong> por nuestra cercanía familiar. Si estás pasando por una dificultad, necesitas consejería de los pastores William y Claudia Arbeláez, o quieres compartir un testimonio de victoria, usa esta sección. Creemos en el milagro del clamor unido.
             </p>
 
             {/* Structured Info Lines */}
@@ -89,7 +89,7 @@ export default function Contact() {
                   <div className="flex items-center gap-2 mt-1">
                     <a 
                       href="tel:+573046485133" 
-                      className="text-stone-800 hover:text-[#ff0000] font-sans text-xs font-bold transition"
+                      className="text-stone-800 hover:text-red-600 font-sans text-xs font-bold transition"
                     >
                       304 6485133
                     </a>
@@ -97,8 +97,8 @@ export default function Contact() {
                     <a 
                       href="https://wa.me/573046485133?text=Hola,%20quisiera%20recibir%20informaci%C3%B3n%20de%20la%20iglesia%20Vida%20Plena%20Internacional" 
                       target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-[#ff0000] hover:underline font-sans text-[11px] font-semibold"
+                      rel="noopener noreferrer" 
+                      className="text-red-600 hover:underline font-sans text-[11px] font-semibold"
                     >
                       Escribir a WhatsApp
                     </a>
@@ -131,7 +131,7 @@ export default function Contact() {
                       href="https://vidaplenainternacional.co" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="text-[#ff0000] font-bold hover:underline"
+                      className="text-red-600 font-bold hover:underline"
                     >
                       vidaplenainternacional.co
                     </a>

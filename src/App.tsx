@@ -5,20 +5,19 @@ import HomeSections from "./components/HomeSections";
 import Services from "./components/Services";
 import Messages from "./components/Messages";
 import Contact from "./components/Contact";
-import Team from "./components/Team";
 import Footer from "./components/Footer";
 import SedeSurLanding from "./components/SedeSurLanding";
-import SedeMelgarLanding from "./components/SedeMelgarLanding";
+import SedeBarranquillaLanding from "./components/SedeBarranquillaLanding";
 
 export default function App() {
   const getInitialPage = () => {
     if (typeof window === "undefined") return "inicio";
     const path = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
-    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur", "sede-melgar", "melgar", "sede-megar"].includes(path)) {
+    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur", "sede-barranquilla", "barranquilla", "sede-melgar", "melgar", "sede-megar"].includes(path)) {
       return path;
     }
     const hash = window.location.hash.replace(/^#/, "").toLowerCase();
-    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur", "sede-melgar", "melgar", "sede-megar"].includes(hash)) {
+    if (["servicios", "mensajes", "contacto", "sedes", "sede-sur", "sede-barranquilla", "barranquilla", "sede-melgar", "melgar", "sede-megar"].includes(hash)) {
       return hash;
     }
     return "inicio";
@@ -38,7 +37,7 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname.replace(/^\/|\/$/g, "").toLowerCase();
-      if (["servicios", "mensajes", "contacto", "sedes", "sede-sur", "sede-melgar", "melgar", "sede-megar"].includes(path)) {
+      if (["servicios", "mensajes", "contacto", "sedes", "sede-sur", "sede-barranquilla", "barranquilla", "sede-melgar", "melgar", "sede-megar"].includes(path)) {
         setActivePage(path);
       } else {
         setActivePage("inicio");
@@ -66,16 +65,17 @@ export default function App() {
             <Hero onNavigate={handleNavigate} />
             <HomeSections onNavigate={handleNavigate} />
             <Contact />
-            <Team />
           </>
         );
       case "sedes":
       case "sede-sur":
         return <SedeSurLanding onNavigate={handleNavigate} />;
+      case "sede-barranquilla":
+      case "barranquilla":
       case "sede-melgar":
       case "melgar":
       case "sede-megar":
-        return <SedeMelgarLanding onNavigate={handleNavigate} />;
+        return <SedeBarranquillaLanding onNavigate={handleNavigate} />;
       case "servicios":
         return <Services />;
       case "mensajes":
@@ -88,14 +88,13 @@ export default function App() {
             <Hero onNavigate={handleNavigate} />
             <HomeSections onNavigate={handleNavigate} />
             <Contact />
-            <Team />
           </>
         );
     }
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between bg-white" id="applet-root">
+    <div className="relative min-h-screen flex flex-col justify-between bg-[#f4f4f6]" id="applet-root">
       
       {/* Absolute high-end multi-page navigation header */}
       <Header activeSection={activePage} onNavigate={handleNavigate} />

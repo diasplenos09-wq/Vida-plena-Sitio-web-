@@ -77,7 +77,7 @@ export default function Services() {
   };
 
   return (
-    <section id="servicios" className="py-24 px-6 bg-white border-t border-stone-200/50">
+    <section id="servicios" className="py-24 px-6 bg-[#f4f4f6] border-t border-stone-200/50">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}

@@ -37,26 +37,21 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
   };
 
   return (
-    <div className="bg-white font-sans text-stone-900" id="sede-sur-landing-root">
+    <div className="bg-[#f4f4f6] font-sans text-stone-900" id="sede-sur-landing-root">
       
       {/* =========================================================================
           HERO BANNER: VIDA PLENA INTERNACIONAL SEDE SUR
           Estructura idéntica a la portada principal con tipografía de alto impacto
          ========================================================================= */}
-      <section className="relative overflow-hidden bg-white border-b border-stone-150 py-12 sm:py-16 lg:py-20 px-6 md:px-12 lg:px-20" id="sede-sur-hero">
+      <section className="relative overflow-hidden bg-[#f4f4f6] border-b border-stone-200/60 py-12 sm:py-16 lg:py-20 px-6 md:px-12 lg:px-20" id="sede-sur-hero">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             
             {/* Columna Izquierda: Identidad y Titular Principal */}
             <div className="lg:col-span-6 text-left space-y-6 sm:space-y-8" id="sede-sur-hero-left">
               
-              {/* Badge de Bienvenida Sede Sur y Switcher de Sedes */}
+              {/* Switcher de Sedes */}
               <div className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 bg-[#dc2626] text-white px-4 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xs">
-                  <span className="w-2.5 h-2.5 bg-white rounded-full animate-pulse" />
-                  BIENVENIDOS A CASA · SEDE SUR
-                </div>
-
                 {/* Botón rápido para alternar a Sede Principal */}
                 <button
                   onClick={() => onNavigate("inicio")}
@@ -237,7 +232,7 @@ export default function SedeSurLanding({ onNavigate }: SedeSurLandingProps) {
       {/* =========================================================================
           HORARIOS DE SERVICIOS SEDE SUR
          ========================================================================= */}
-      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-white border-b border-stone-150" id="sede-sur-horarios">
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-[#f4f4f6] border-b border-stone-200/60" id="sede-sur-horarios">
         <div className="max-w-7xl mx-auto space-y-12">
           
           <div className="max-w-3xl text-left space-y-3">

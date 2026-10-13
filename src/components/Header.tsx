@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, MapPin } from "lucide-react";
+import VidaPlenaEmblem from "./VidaPlenaEmblem";
 
 interface HeaderProps {
   activeSection: string;
@@ -39,35 +40,27 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
       id="main-nav-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-3 shadow-xs"
-          : "bg-white/70 backdrop-blur-xs py-4 border-b border-slate-100/60"
+          ? "bg-[#f4f4f6]/95 backdrop-blur-md border-b border-stone-200/80 py-3 shadow-xs"
+          : "bg-[#f4f4f6]/80 backdrop-blur-xs py-4 border-b border-stone-200/60"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        {/* Logo Vida Plena Internacional - Astra Clean Poppins Typography */}
+        {/* Logo del Menú: Únicamente el muñeco sin las letras */}
         <button
           onClick={() => handleNavClick("inicio")}
-          className="flex items-center gap-2 group text-left cursor-pointer focus:outline-hidden"
+          className="flex items-center group cursor-pointer focus:outline-hidden py-1 text-left"
           id="logo-button"
+          aria-label="Ir al inicio - Vida Plena Internacional"
+          title="Vida Plena Internacional"
         >
-          <div className="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white font-bold text-sm shadow-xs group-hover:bg-red-700 transition-colors">
-            VP
-          </div>
-          <div className="flex flex-col -space-y-0.5">
-            <span className="text-slate-900 font-bold text-lg tracking-tight select-none leading-none group-hover:text-red-600 transition-colors">
-              VIDA PLENA
-            </span>
-            <span className="text-slate-500 font-semibold uppercase tracking-[0.24em] text-[9px] select-none block leading-none">
-              INTERNACIONAL
-            </span>
-          </div>
+          <VidaPlenaEmblem className="h-9 sm:h-10 w-auto text-slate-950 group-hover:text-red-600 transition-colors shrink-0" />
         </button>
 
-        {/* Desktop Navigation - Astra Minimalist Menu */}
-        <nav className="hidden md:flex items-center gap-1 bg-slate-50/90 p-1 rounded-lg border border-slate-200/80" id="desktop-nav">
+        {/* Desktop Navigation - Minimalist Menu (Sin caja contenedor ni bordes) */}
+        <nav className="hidden md:flex items-center gap-7 lg:gap-8" id="desktop-nav">
           {navItems.map((item) => {
             if (item.hasDropdown) {
-              const isSedesActive = ["sedes", "sede-sur", "sede-melgar", "melgar", "sede-megar"].includes(activeSection);
+              const isSedesActive = ["sedes", "sede-sur", "sede-barranquilla", "barranquilla", "sede-melgar", "melgar", "sede-megar"].includes(activeSection);
               return (
                 <div 
                   key={item.id} 
@@ -77,21 +70,21 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
                 >
                   <button
                     onClick={() => setIsSedesOpen(!isSedesOpen)}
-                    className={`relative px-3.5 py-1.5 rounded-md font-sans text-xs font-medium tracking-normal transition-all duration-150 cursor-pointer inline-flex items-center gap-1 focus:outline-hidden ${
+                    className={`font-sans text-xs sm:text-[13px] font-medium tracking-normal transition-colors cursor-pointer inline-flex items-center gap-1.5 focus:outline-hidden py-1 ${
                       isSedesActive
-                        ? "bg-white text-slate-900 shadow-xs font-semibold border border-slate-200"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-white/70"
+                        ? "text-red-600 font-semibold"
+                        : "text-slate-700 hover:text-red-600"
                     }`}
                     id="nav-link-sedes-dropdown"
                   >
                     <span>{item.label}</span>
-                    <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isSedesOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isSedesOpen ? "rotate-180" : ""}`} />
                   </button>
 
                   {/* Dropdown Menu Desplegable de Sedes */}
                   {isSedesOpen && (
                     <div 
-                      className="absolute top-full left-0 mt-1.5 w-64 bg-white rounded-xl shadow-lg border border-slate-200/90 p-1.5 z-50 flex flex-col gap-0.5 text-left animate-in fade-in slide-in-from-top-1 duration-150"
+                      className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-slate-200/90 p-1.5 z-50 flex flex-col gap-0.5 text-left animate-in fade-in slide-in-from-top-1 duration-150"
                       id="sedes-dropdown-card"
                     >
                       <button
@@ -121,14 +114,14 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
                       </button>
 
                       <button
-                        onClick={() => handleNavClick("sede-melgar")}
+                        onClick={() => handleNavClick("sede-barranquilla")}
                         className="w-full text-left p-2.5 rounded-lg hover:bg-slate-50 transition flex items-center justify-between group cursor-pointer border-t border-slate-100"
                       >
                         <div>
                           <strong className="text-slate-900 text-xs font-semibold block group-hover:text-red-600 transition">
-                            Sede Melgar
+                            Sede Barranquilla
                           </strong>
-                          <span className="text-slate-500 text-[11px] block">Tolima (Cultos & Retiros)</span>
+                          <span className="text-slate-500 text-[11px] block">Cra. 4 #41B-91 (Atlántico)</span>
                         </div>
                         <MapPin className="w-3.5 h-3.5 text-red-600 group-hover:scale-110 transition" />
                       </button>
@@ -143,10 +136,10 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-3.5 py-1.5 rounded-md font-sans text-xs font-medium tracking-normal transition-all duration-150 cursor-pointer focus:outline-hidden ${
+                className={`font-sans text-xs sm:text-[13px] font-medium tracking-normal transition-colors cursor-pointer focus:outline-hidden py-1 ${
                   isActive
-                    ? "bg-white text-slate-900 shadow-xs font-semibold border border-slate-200"
-                    : "text-slate-600 hover:text-slate-900 hover:bg-white/70"
+                    ? "text-red-600 font-semibold"
+                    : "text-slate-700 hover:text-red-600"
                 }`}
                 id={`nav-link-${item.id}`}
               >
@@ -219,10 +212,10 @@ export default function Header({ activeSection, onNavigate }: HeaderProps) {
                           · Sede Sur (Bogotá)
                         </button>
                         <button
-                          onClick={() => handleNavClick("sede-melgar")}
+                          onClick={() => handleNavClick("sede-barranquilla")}
                           className="text-left py-1 text-xs text-slate-600 hover:text-red-600 font-medium"
                         >
-                          · Sede Melgar (Tolima)
+                          · Sede Barranquilla (Cra. 4 #41B-91)
                         </button>
                       </div>
                     )}

@@ -139,7 +139,7 @@ export default function Messages() {
   }, [activeTab, searchQuery]);
 
   return (
-    <section id="mensajes-videos" className="py-24 px-6 bg-white border-t border-stone-200/50">
+    <section id="mensajes-videos" className="py-24 px-6 bg-[#f4f4f6] border-t border-stone-200/50">
       <div className="max-w-6xl mx-auto">
         
         {/* Page Section Headings */}

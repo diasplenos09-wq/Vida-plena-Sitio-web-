@@ -141,172 +141,215 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
   };
 
   return (
-    <div className="bg-white font-sans text-stone-900" id="home-additional-sections">
+    <div className="bg-[#f4f4f6] font-sans text-stone-900" id="home-additional-sections">
 
-      {/* SECTION 1: REUNIONES Y HORARIOS */}
-      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-white border-t border-stone-100" id="schedules-and-location">
+      {/* SECCIÓN MISIONAL CENTRADA: IGLESIA CRISTIANA VIDA PLENA INTERNACIONAL */}
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-[#ededf0] border-t border-b border-stone-200/80" id="seccion-mision-vida-plena">
+        <div className="max-w-4xl mx-auto text-center space-y-6 flex flex-col items-center justify-center">
+          
+          <h2 className="text-stone-950 font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight uppercase text-center" id="titulo-iglesia-cristiana-vida-plena">
+            Iglesia Cristiana Vida Plena Internacional
+          </h2>
+
+          <p className="text-stone-600 font-sans text-base sm:text-lg lg:text-xl leading-relaxed text-center max-w-3xl mx-auto" id="descripcion-iglesia-cristiana-vida-plena">
+            Vida Plena es una <strong className="font-medium text-stone-800">comunidad cristiana</strong> cuya tarea y mayor responsabilidad es establecer el reino de Dios en la tierra mediante la predicación práctica y sencilla del evangelio de Jesucristo, llevando a cada persona a disfrutar de la plenitud de vida que Dios estableció para ellos.
+          </p>
+
+          <div className="pt-2 flex justify-center">
+            <a
+              href="https://www.youtube.com/@oscarbernier"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 active:scale-95 text-white font-sans text-sm sm:text-base font-semibold px-8 py-3.5 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer group"
+              id="btn-youtube-canal"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              <span>Youtube</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* SECTION: HORARIOS Y SERVICIOS SEMANALES (MINIMALISTA, ELEGANTE Y CON MOVIMIENTO) */}
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-[#f4f4f6] border-b border-stone-200/60" id="schedules-and-location">
         <div className="max-w-7xl mx-auto space-y-12">
           
-          {/* Header de la Sección */}
-          <div className="max-w-3xl text-left space-y-3">
-            <h2 className="text-stone-950 font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight uppercase" id="titulo-comunidad-cristiana-bogota">
-              comunidad cristiana Bogotá
+          {/* Header de Servicios Semanales Centrado, Minimalista y Elegante */}
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <span className="text-[10px] uppercase font-bold text-stone-500 tracking-[0.25em] block">
+              Horarios de Servicios
+            </span>
+            <h2 className="text-stone-950 font-sans font-bold text-3xl sm:text-4xl tracking-tight leading-tight">
+              Nuestros Servicios Semanales
             </h2>
-            <p className="text-stone-600 font-sans text-xs sm:text-sm lg:text-base leading-relaxed">
-              Cada semana nos reunimos como <strong className="font-medium text-stone-800">Iglesia Cristiana</strong> para adorar, aprender y crecer juntos como familia en Dios. Conoce nuestros horarios de reunión y comodidades en nuestra sede norte.
+            <p className="text-stone-500 font-sans text-xs sm:text-sm leading-relaxed max-w-lg mx-auto">
+              Te esperamos con los brazos abiertos en cada una de nuestras reuniones presenciales como <strong className="font-semibold text-stone-900">Iglesia Cristiana</strong> en familia.
             </p>
           </div>
 
-          {/* Grid de Auditorio y Horarios de Reunión (Sin mapa aquí, movido al pie de página) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch" id="auditorio-horarios-grid">
+          {/* 4 Contenedores Minimalistas y Elegantes con Movimiento e Interacción */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch" id="servicios-4-recuadros">
             
-            {/* Tarjeta Auditorio Principal */}
-            <div className="lg:col-span-5 bg-stone-50 border border-stone-200/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6" id="seccion-auditorio">
-              <div className="space-y-5 text-left">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] uppercase font-bold text-[#dc2626] tracking-widest bg-red-50 border border-red-100 px-3 py-1 rounded-full">
-                    Auditorio Presencial
-                  </span>
-                  <div className="w-8 h-8 rounded-full bg-white border border-stone-200/80 flex items-center justify-center text-[#dc2626] shadow-2xs">
-                    <MapPin className="w-4 h-4" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="font-display font-black text-stone-950 text-xl sm:text-2xl tracking-tight">
-                    Auditorio Principal Bogotá
-                  </h3>
-                  <p className="text-stone-700 font-sans font-medium text-sm leading-snug">
-                    Cl. 163 #18a-23, Bogotá
-                  </p>
-                  <p className="text-stone-500 font-sans text-xs leading-relaxed pt-1">
-                    Ubicado estratégicamente en el norte de Bogotá. Un lugar seguro y acogedor diseñado para que disfrutes la presencia de Dios con total tranquilidad.
-                  </p>
-                </div>
-
-                {/* Comodidades destacadas y contacto directo */}
-                <div className="space-y-2.5 pt-2 border-t border-stone-200/60">
-                  <div className="flex items-center gap-2.5 text-xs text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626]" />
-                    <span>
-                      <strong className="text-stone-900 font-semibold">WhatsApp / Tel:</strong>{" "}
-                      <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-stone-900 hover:text-[#dc2626] font-bold">
-                        304 6485133
-                      </a>
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2.5 text-xs text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626]" />
-                    <span>
-                      <strong className="text-stone-900 font-semibold">Servicios:</strong> Dom 8:00 AM & 10:30 AM · Mié 7:00 PM
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2.5 text-xs text-stone-700">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#dc2626]" />
-                    <span>Parqueadero vigilado y salas climatizadas (Vida Kids)</span>
-                  </div>
-                </div>
+            {/* Recuadro 1: Culto General */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0, ease: "easeOut" }}
+              whileHover={{ 
+                y: -8, 
+                transition: { duration: 0.25, ease: "easeOut" } 
+              }}
+              className="group relative bg-[#f7f7f8] hover:bg-white border border-stone-200/70 hover:border-stone-300 rounded-3xl p-7 sm:p-8 flex flex-col justify-between text-center transition-all duration-300 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)] cursor-default"
+            >
+              <div className="space-y-2 flex flex-col items-center">
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-stone-400 group-hover:text-stone-700 transition-colors block">
+                  Culto General
+                </span>
+                <h3 className="font-sans font-bold text-stone-900 text-lg sm:text-xl tracking-tight leading-snug">
+                  Domingos Familiares
+                </h3>
               </div>
 
-              {/* Botones de navegación GPS */}
-              <div className="flex flex-wrap gap-2.5 pt-4 border-t border-stone-200/60">
-                <button
-                  onClick={handleMapRedirect}
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-[#dc2626] text-white font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
-                >
-                  Abrir en Waze
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-                <a
-                  href="https://share.google/pvSe8QKyMZ2HoplYx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#dc2626] hover:bg-stone-900 text-white font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 shadow-xs cursor-pointer"
-                >
-                  Google Maps
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
-
-            {/* Tarjeta Horarios de Reunión Semanales */}
-            <div className="lg:col-span-7 bg-white border border-stone-200/80 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-xs" id="seccion-horarios">
-              <div className="space-y-5 text-left">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] uppercase font-bold text-stone-600 tracking-widest bg-stone-100 border border-stone-200 px-3 py-1 rounded-full">
-                    Horarios de Servicios
-                  </span>
-                  <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200/80 flex items-center justify-center text-stone-900 shadow-2xs">
-                    <Clock className="w-4 h-4" />
-                  </div>
-                </div>
-
-                <div className="space-y-1">
-                  <h3 className="font-display font-black text-stone-950 text-xl sm:text-2xl tracking-tight">
-                    Nuestros Servicios Semanales
-                  </h3>
-                  <p className="text-stone-500 font-sans text-xs leading-relaxed">
-                    Te esperamos con los brazos abiertos en cada una de nuestras reuniones presenciales.
-                  </p>
-                </div>
-
-                {/* Grid de servicios presenciales */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
-                  <div className="p-4 rounded-2xl bg-stone-50 border border-stone-150 flex items-start justify-between gap-3">
-                    <div className="text-left">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Culto General</span>
-                      <strong className="text-stone-900 text-sm font-bold block mt-0.5">Domingos Familiares</strong>
-                      <span className="text-[#dc2626] text-xs font-bold block mt-1">8:00 AM y 10:30 AM</span>
-                    </div>
-                    <Calendar className="w-4 h-4 text-[#dc2626] shrink-0 mt-1" />
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-stone-50 border border-stone-150 flex items-start justify-between gap-3">
-                    <div className="text-left">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Reunión de Enfoque</span>
-                      <strong className="text-stone-900 text-sm font-bold block mt-0.5">Miércoles Explosivos</strong>
-                      <span className="text-[#dc2626] text-xs font-bold block mt-1">7:00 PM</span>
-                    </div>
-                    <Clock className="w-4 h-4 text-stone-700 shrink-0 mt-1" />
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-stone-50 border border-stone-150 flex items-start justify-between gap-3">
-                    <div className="text-left">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Intercesión</span>
-                      <strong className="text-stone-900 text-sm font-bold block mt-0.5">Oración Madrugada ADN</strong>
-                      <span className="text-[#dc2626] text-xs font-bold block mt-1">Martes 5:00 AM</span>
-                    </div>
-                    <Heart className="w-4 h-4 text-stone-700 shrink-0 mt-1" />
-                  </div>
-
-                  <div className="p-4 rounded-2xl bg-stone-50 border border-stone-150 flex items-start justify-between gap-3">
-                    <div className="text-left">
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Atención Niños</span>
-                      <strong className="text-stone-900 text-sm font-bold block mt-0.5">Vida Kids</strong>
-                      <span className="text-[#dc2626] text-xs font-bold block mt-1">Domingos en Simultáneo</span>
-                    </div>
-                    <BookOpen className="w-4 h-4 text-stone-700 shrink-0 mt-1" />
-                  </div>
-                </div>
+              <div className="my-5 py-2 px-3 rounded-xl bg-white/90 border border-stone-200/60 group-hover:border-stone-300 group-hover:shadow-2xs transition-all duration-300">
+                <span className="text-stone-950 font-sans font-bold text-sm sm:text-base tracking-tight block">
+                  8:00 AM y 10:30 AM
+                </span>
               </div>
 
-              <div className="pt-4 border-t border-stone-200/60">
-                <button
-                  onClick={() => onNavigate("servicios")}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-stone-100 hover:bg-stone-900 hover:text-white text-stone-900 font-sans text-xs font-semibold px-4 py-2.5 rounded-full transition-all duration-200 cursor-pointer"
-                >
-                  Ver Todos los Detalles de Servicios
-                  <ChevronRight className="w-3.5 h-3.5" />
-                </button>
+              <div>
+                <p className="text-stone-500 font-sans text-xs sm:text-[13px] leading-relaxed max-w-xs mx-auto">
+                  Celebración, adoración y mensaje bíblico para edificar la fe de toda la familia.
+                </p>
               </div>
-            </div>
+            </motion.div>
+
+            {/* Recuadro 2: Reunión de Enfoque */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+              whileHover={{ 
+                y: -8, 
+                transition: { duration: 0.25, ease: "easeOut" } 
+              }}
+              className="group relative bg-[#f7f7f8] hover:bg-white border border-stone-200/70 hover:border-stone-300 rounded-3xl p-7 sm:p-8 flex flex-col justify-between text-center transition-all duration-300 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)] cursor-default"
+            >
+              <div className="space-y-2 flex flex-col items-center">
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-stone-400 group-hover:text-stone-700 transition-colors block">
+                  Reunión de Enfoque
+                </span>
+                <h3 className="font-sans font-bold text-stone-900 text-lg sm:text-xl tracking-tight leading-snug">
+                  Miércoles Explosivos
+                </h3>
+              </div>
+
+              <div className="my-5 py-2 px-3 rounded-xl bg-white/90 border border-stone-200/60 group-hover:border-stone-300 group-hover:shadow-2xs transition-all duration-300">
+                <span className="text-stone-950 font-sans font-bold text-sm sm:text-base tracking-tight block">
+                  7:00 PM
+                </span>
+              </div>
+
+              <div>
+                <p className="text-stone-500 font-sans text-xs sm:text-[13px] leading-relaxed max-w-xs mx-auto">
+                  Noche de poder, revelación de la Palabra y fortalecimiento de fe en comunidad.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Recuadro 3: Intercesión */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              whileHover={{ 
+                y: -8, 
+                transition: { duration: 0.25, ease: "easeOut" } 
+              }}
+              className="group relative bg-[#f7f7f8] hover:bg-white border border-stone-200/70 hover:border-stone-300 rounded-3xl p-7 sm:p-8 flex flex-col justify-between text-center transition-all duration-300 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)] cursor-default"
+            >
+              <div className="space-y-2 flex flex-col items-center">
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-stone-400 group-hover:text-stone-700 transition-colors block">
+                  Intercesión
+                </span>
+                <h3 className="font-sans font-bold text-stone-900 text-lg sm:text-xl tracking-tight leading-snug">
+                  Oración Madrugada ADN
+                </h3>
+              </div>
+
+              <div className="my-5 py-2 px-3 rounded-xl bg-white/90 border border-stone-200/60 group-hover:border-stone-300 group-hover:shadow-2xs transition-all duration-300">
+                <span className="text-stone-950 font-sans font-bold text-sm sm:text-base tracking-tight block">
+                  Martes 5:00 AM
+                </span>
+              </div>
+
+              <div>
+                <p className="text-stone-500 font-sans text-xs sm:text-[13px] leading-relaxed max-w-xs mx-auto">
+                  Clamor matutino e intercesión unida buscando la presencia y dirección de Dios.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Recuadro 4: Atención Niños */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+              whileHover={{ 
+                y: -8, 
+                transition: { duration: 0.25, ease: "easeOut" } 
+              }}
+              className="group relative bg-[#f7f7f8] hover:bg-white border border-stone-200/70 hover:border-stone-300 rounded-3xl p-7 sm:p-8 flex flex-col justify-between text-center transition-all duration-300 hover:shadow-[0_16px_36px_rgba(0,0,0,0.06)] cursor-default"
+            >
+              <div className="space-y-2 flex flex-col items-center">
+                <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-stone-400 group-hover:text-stone-700 transition-colors block">
+                  Atención Niños
+                </span>
+                <h3 className="font-sans font-bold text-stone-900 text-lg sm:text-xl tracking-tight leading-snug">
+                  Vida Kids
+                </h3>
+              </div>
+
+              <div className="my-5 py-2 px-3 rounded-xl bg-white/90 border border-stone-200/60 group-hover:border-stone-300 group-hover:shadow-2xs transition-all duration-300">
+                <span className="text-stone-950 font-sans font-bold text-sm sm:text-base tracking-tight block">
+                  Domingos en Simultáneo
+                </span>
+              </div>
+
+              <div>
+                <p className="text-stone-500 font-sans text-xs sm:text-[13px] leading-relaxed max-w-xs mx-auto">
+                  Espacio dinámico y seguro para que los niños crezcan conociendo la fe en Jesús.
+                </p>
+              </div>
+            </motion.div>
 
           </div>
+
+          {/* Botón Ver Todos los Detalles de Servicios Minimalista */}
+          <div className="text-center pt-2">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => onNavigate("servicios")}
+              className="inline-flex items-center justify-center gap-2 bg-stone-900 hover:bg-black text-white font-sans text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs hover:shadow-md"
+              id="btn-ver-detalles-servicios"
+            >
+              <span>Ver Todos los Detalles de Servicios</span>
+              <ChevronRight className="w-4 h-4" />
+            </motion.button>
+          </div>
+
         </div>
       </section>
 
       {/* SECTION 2: Featured Sermon & Interactive Video Carousel */}
-      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-stone-50/50 border-t border-stone-100" id="featured-sermon-section">
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-[#f4f4f6] border-t border-stone-200/60" id="featured-sermon-section">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
@@ -519,11 +562,11 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
       </section>
 
       {/* SECTION 3: 4 Blogs en la página principal (Noticias Vida Plena Internacional) */}
-      <section className="py-24 px-6 md:px-12 lg:px-20 bg-white border-t border-stone-100" id="blog-articles-section">
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-[#f4f4f6] border-t border-stone-200/60" id="blog-articles-section">
         <div className="max-w-7xl mx-auto">
           
           {/* Black heading panel row */}
-          <div className="bg-stone-950 text-white rounded-3xl p-8 sm:p-12 mb-16 text-left flex flex-col md:flex-row md:items-center justify-between gap-6" id="blog-header-badge-row">
+          <div className="bg-stone-950 text-white rounded-3xl p-8 sm:p-12 mb-12 text-left flex flex-col md:flex-row md:items-center justify-between gap-6" id="blog-header-badge-row">
             <div className="space-y-2">
               <span className="text-[10px] text-[#dc2626] uppercase font-black tracking-widest">
                 Comunidad Activa
@@ -549,7 +592,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6" id="blogs-grid">
             
             {/* Video Card 1 */}
-            <div className="bg-stone-50 border border-stone-200 rounded-[24px] p-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between" id="video-embed-card-1">
+            <div className="bg-white border border-stone-200/90 rounded-[24px] p-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between" id="video-embed-card-1">
               <div className="space-y-3 text-left">
                 <div className="aspect-video w-full rounded-2xl overflow-hidden bg-stone-950 shadow-xs">
                   {renderVideoCover("WKzvTfoh4_U", "Restaurando Familias con el Poder de Dios")}
@@ -564,7 +607,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
             </div>
 
             {/* Video Card 2 */}
-            <div className="bg-stone-50 border border-stone-200 rounded-[24px] p-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between" id="video-embed-card-2">
+            <div className="bg-white border border-stone-200/90 rounded-[24px] p-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between" id="video-embed-card-2">
               <div className="space-y-3 text-left">
                 <div className="aspect-video w-full rounded-2xl overflow-hidden bg-stone-950 shadow-xs">
                   {renderVideoCover("Xwk_yjISVn4", "Estableciendo el Reino de Dios en la Tierra")}
@@ -579,7 +622,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
             </div>
 
             {/* Video Card 3 */}
-            <div className="bg-stone-50 border border-stone-200 rounded-[24px] p-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between" id="video-embed-card-3">
+            <div className="bg-white border border-stone-200/90 rounded-[24px] p-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between" id="video-embed-card-3">
               <div className="space-y-3 text-left">
                 <div className="aspect-video w-full rounded-2xl overflow-hidden bg-stone-950 shadow-xs">
                   {renderVideoCover("QDE2lt1yONQ", "Caminando con Valentía y Esperanza Diaria")}
@@ -597,42 +640,33 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
         </div>
       </section>
 
-      {/* SECTION 4: Final Black Callout Banner (Image 5 exact design) */}
-      <section className="py-20 px-6 md:px-12 lg:px-20 bg-white" id="callout-banner-section">
-        <div className="max-w-7xl mx-auto">
+      {/* SECTION 4: Callout Banner Sé parte del cambio (Amplio de derecha a izquierda) */}
+      <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-12 xl:px-16 bg-[#f4f4f6]" id="callout-banner-section">
+        <div className="w-full max-w-[1536px] mx-auto">
           
           <div 
-            className="bg-[#0c0a09] text-white rounded-[32px] p-8 sm:p-16 relative overflow-hidden text-center flex flex-col items-center justify-center border border-stone-900 shadow-2xl"
+            className="bg-[#0c0a09] text-white rounded-[28px] sm:rounded-[36px] px-6 sm:px-14 lg:px-20 py-16 sm:py-20 relative overflow-hidden text-center flex flex-col items-center justify-center border border-stone-900 shadow-2xl w-full"
             id="callout-card"
           >
-            {/* Background elements to ensure depth */}
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#dc2626]/10 rounded-full filter blur-3xl opacity-20 pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-stone-900/60 rounded-full filter blur-2xl opacity-40 pointer-events-none" />
-
-            {/* Grey pill container with white text and solid red bullet */}
-            <div 
-              className="inline-flex items-center gap-2 bg-[#292524] text-[#e7e5e4] border border-stone-800 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-8 relative z-10"
-              id="callout-pill"
-            >
-              <span className="w-2.5 h-2.5 bg-[#dc2626] rounded-full animate-pulse" />
-              BIENVENIDOS A CASA
-            </div>
+            {/* Subtle glow depth */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#dc2626]/10 rounded-full filter blur-3xl opacity-25 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-stone-900/60 rounded-full filter blur-3xl opacity-35 pointer-events-none" />
 
             {/* Title: Sé parte del cambio */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white mb-6 leading-none max-w-2xl relative z-10 uppercase">
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl relative z-10 uppercase">
               Sé parte del cambio
             </h2>
 
-            {/* Paragraph: Tu generosidad... */}
-            <p className="text-stone-300 font-sans text-xs sm:text-sm leading-relaxed max-w-xl mb-10 relative z-10">
-              Tu generosidad nos ayuda a seguir impactando vidas en nuestra comunidad y más allá, consolidándonos como un referente entre las <strong className="font-semibold text-white">iglesias norte de Bogotá</strong>. Gracias por sembrar en buena tierra.
+            {/* Paragraph: Updated wide description text */}
+            <p className="text-stone-300 font-sans text-sm sm:text-base lg:text-lg leading-relaxed max-w-4xl mb-10 relative z-10 text-center font-normal">
+              Vida Plena es una <strong className="font-semibold text-white">comunidad cristiana en Bogotá</strong> donde encontrarás un espacio para acercarte a Dios, fortalecer tu fe y compartir con otras familias. Nuestra <strong className="font-semibold text-white">iglesia cristiana en Bogotá</strong> busca llevar el evangelio de Jesucristo a la vida cotidiana, creando una comunidad donde puedas sentirte acompañado y crecer espiritualmente.
             </p>
 
-            {/* Two Action Buttons side by side (Image 5 exact design) */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto relative z-10" id="callout-actions">
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto relative z-10" id="callout-actions">
               <button
                 onClick={() => setShowDonateModal(true)}
-                className="w-full sm:w-auto bg-[#dc2626] hover:bg-[#b91c1c] text-white font-sans text-xs font-medium px-7 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
+                className="w-full sm:w-auto bg-[#dc2626] hover:bg-[#b91c1c] active:scale-95 text-white font-sans text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg"
                 id="btn-donate-trigger"
               >
                 Donar en línea
@@ -642,7 +676,7 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   const el = document.getElementById("schedules-and-location");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="w-full sm:w-auto bg-stone-900 hover:bg-stone-800 text-white font-sans text-xs font-medium px-6 py-2.5 rounded-full transition-all duration-200 cursor-pointer shadow-xs"
+                className="w-full sm:w-auto bg-[#1c1917] hover:bg-[#292524] active:scale-95 text-white border border-stone-800 font-sans text-xs sm:text-sm font-semibold px-8 py-3.5 rounded-full transition-all duration-200 cursor-pointer shadow-sm hover:shadow-md"
                 id="btn-callout-schedules"
               >
                 Ver Horarios

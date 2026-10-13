@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-cursive: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-logo-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Merriweather", Georgia, serif;
+  --font-display: "Merriweather", Georgia, serif;
+  --font-serif: "Merriweather", Georgia, serif;
+  --font-cursive: "Merriweather", Georgia, serif;
+  --font-logo-sans: "Merriweather", Georgia, serif;
   
   --color-primary-50: #fef2f2;
   --color-primary-100: #fee2e2;
@@ -35,33 +35,34 @@
 /* Astra Theme Core Global Styling */
 @layer base {
   *, ::before, ::after {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    font-family: 'Merriweather', Georgia, serif !important;
   }
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f4f4f6;
+    font-family: 'Merriweather', Georgia, serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
   
   body {
-    background-color: #ffffff;
+    background-color: #f4f4f6 !important;
     color: #1e293b; /* Slate 800 - balanced, crisp, high legibility */
     overflow-x: hidden;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Merriweather', Georgia, serif;
     line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif !important;
-    letter-spacing: -0.02em;
+    font-family: 'Merriweather', Georgia, serif !important;
+    letter-spacing: -0.01em;
     color: #0f172a;
   }
 
   p, span, a, button, input, textarea, select {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Merriweather', Georgia, serif !important;
   }
 }
 

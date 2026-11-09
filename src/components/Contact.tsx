@@ -1,4 +1,5 @@
 import { useState, FormEvent } from "react";
+import { motion } from "motion/react";
 import { Send, MapPin, Mail, MessageCircle, CheckCircle, RefreshCw, AlertCircle, Phone, Globe, Clock } from "lucide-react";
 import { PrayerSubmission } from "../types";
 
@@ -191,35 +192,49 @@ export default function Contact() {
           </form>
         </div>
 
-        {/* INFORMACIÓN DE CANALES DIRECTOS 100% CENTRADOS */}
-        <div className="max-w-5xl mx-auto mt-14" id="contact-info-panel">
-          <h3 className="font-display font-bold text-xs sm:text-sm text-stone-500 mb-6 uppercase tracking-[0.25em] text-center">
+        {/* INFORMACIÓN DE CANALES DIRECTOS 100% CENTRADOS Y ANIMADOS */}
+        <div className="max-w-5xl mx-auto mt-16" id="contact-info-panel">
+          <h3 className="font-display font-bold text-xs sm:text-sm text-stone-500 mb-8 uppercase tracking-[0.25em] text-center">
             Canales Directos de Atención
           </h3>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="contact-info-details">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="contact-info-details">
             {/* Card 1: Dirección */}
-            <div className="bg-white rounded-2xl p-6 border border-stone-200/70 shadow-xs flex flex-col items-center text-center hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-700 mb-3 shadow-3xs">
-                <MapPin className="w-4 h-4" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: 0, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22, ease: "easeOut" } }}
+              className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-xs hover:border-stone-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] flex flex-col items-center text-center transition-all duration-300 cursor-default"
+            >
+              <div className="w-10 h-10 rounded-2xl bg-stone-100 flex items-center justify-center text-stone-800 mb-4">
+                <MapPin className="w-4 h-4 text-red-600" />
               </div>
-              <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider mb-1">
+              <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider mb-1.5">
                 Dirección Auditorio
               </h4>
               <p className="text-stone-800 font-sans text-xs font-semibold leading-relaxed">
                 Cl. 163 #18a-23, Bogotá
               </p>
-              <p className="text-stone-400 font-sans text-[11px] mt-0.5">
+              <p className="text-stone-400 font-sans text-[11px] mt-1">
                 Norte de Bogotá · Parqueadero vigilado
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 2: Teléfono / WhatsApp */}
-            <div className="bg-white rounded-2xl p-6 border border-stone-200/70 shadow-xs flex flex-col items-center text-center hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-700 mb-3 shadow-3xs">
-                <Phone className="w-4 h-4" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: 0.08, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22, ease: "easeOut" } }}
+              className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-xs hover:border-stone-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] flex flex-col items-center text-center transition-all duration-300 cursor-default"
+            >
+              <div className="w-10 h-10 rounded-2xl bg-stone-100 flex items-center justify-center text-stone-800 mb-4">
+                <Phone className="w-4 h-4 text-stone-800" />
               </div>
-              <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider mb-1">
+              <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider mb-1.5">
                 Línea & WhatsApp
               </h4>
               <a 
@@ -236,30 +251,44 @@ export default function Contact() {
               >
                 Escribir a WhatsApp
               </a>
-            </div>
+            </motion.div>
 
             {/* Card 3: Horario de Servicios */}
-            <div className="bg-white rounded-2xl p-6 border border-stone-200/70 shadow-xs flex flex-col items-center text-center hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-700 mb-3 shadow-3xs">
-                <Clock className="w-4 h-4" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: 0.16, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22, ease: "easeOut" } }}
+              className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-xs hover:border-stone-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] flex flex-col items-center text-center transition-all duration-300 cursor-default"
+            >
+              <div className="w-10 h-10 rounded-2xl bg-stone-100 flex items-center justify-center text-stone-800 mb-4">
+                <Clock className="w-4 h-4 text-stone-800" />
               </div>
-              <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider mb-1">
+              <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider mb-1.5">
                 Horario de Servicios
               </h4>
               <p className="text-stone-800 font-sans text-xs font-semibold leading-relaxed">
                 Dom 8:00 AM & 10:30 AM
               </p>
-              <p className="text-stone-400 font-sans text-[11px] mt-0.5">
+              <p className="text-stone-400 font-sans text-[11px] mt-1">
                 Miércoles 7:00 PM
               </p>
-            </div>
+            </motion.div>
 
             {/* Card 4: Sitio Web & Correo */}
-            <div className="bg-white rounded-2xl p-6 border border-stone-200/70 shadow-xs flex flex-col items-center text-center hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center text-red-700 mb-3 shadow-3xs">
-                <Globe className="w-4 h-4" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: 0.24, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22, ease: "easeOut" } }}
+              className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/80 shadow-xs hover:border-stone-300 hover:shadow-[0_12px_28px_rgba(0,0,0,0.06)] flex flex-col items-center text-center transition-all duration-300 cursor-default"
+            >
+              <div className="w-10 h-10 rounded-2xl bg-stone-100 flex items-center justify-center text-stone-800 mb-4">
+                <Globe className="w-4 h-4 text-stone-800" />
               </div>
-              <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider mb-1">
+              <h4 className="font-display font-bold text-xs text-stone-900 uppercase tracking-wider mb-1.5">
                 Atención Digital
               </h4>
               <a 
@@ -276,7 +305,7 @@ export default function Contact() {
               >
                 vidaplenainternacional.co
               </a>
-            </div>
+            </motion.div>
           </div>
         </div>
 

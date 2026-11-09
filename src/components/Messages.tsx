@@ -318,8 +318,10 @@ export default function Messages() {
         ) : (
           /* Empty state when query matches absolutely no video */
           <div className="text-center py-16 bg-slate-50 rounded-2xl border border-slate-200/80 max-w-lg mx-auto" id="search-empty-state">
-            <span className="text-3xl">🍿</span>
-            <h4 className="font-sans font-bold text-slate-900 mt-4">Mensajes no encontrados</h4>
+            <div className="w-12 h-12 rounded-full bg-slate-200/80 flex items-center justify-center mx-auto text-slate-500 mb-2">
+              <Video className="w-6 h-6" />
+            </div>
+            <h4 className="font-sans font-bold text-slate-900 mt-3">Mensajes no encontrados</h4>
             <p className="text-slate-500 text-xs mt-2 max-w-xs mx-auto">
               No encontramos conferencias de fe para "{searchQuery}". Inténtelo buscando con 'familia', 'fe' o 'temor'.
             </p>

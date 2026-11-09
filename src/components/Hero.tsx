@@ -6,12 +6,12 @@ export default function Hero({ onNavigate }: HeroProps) {
   return (
     <section 
       id="inicio-banner" 
-      className="bg-[#f4f4f6] pt-24 sm:pt-28 pb-16 px-6 sm:px-10 lg:px-14 xl:px-16 max-w-[1536px] mx-auto border-b border-stone-200/60"
+      className="w-full bg-[#f4f4f6] pt-24 sm:pt-28 pb-16 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-28 border-b border-stone-200/60"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center w-full">
+      <div className="w-full max-w-[1720px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-center">
         
         {/* Columna Izquierda: Identidad y Contenido Principal */}
-        <div className="lg:col-span-6 text-left space-y-6" id="hero-content">
+        <div className="lg:col-span-6 xl:col-span-6 text-left space-y-6" id="hero-content">
 
           {/* Titular Principal como estaba antes */}
           <div className="space-y-2 sm:space-y-3" id="hero-brand-section">
@@ -32,7 +32,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           </div>
 
           {/* Slogan Description in clear minimalist style */}
-          <p className="text-stone-600 font-sans text-xs sm:text-sm lg:text-base leading-relaxed max-w-xl" id="hero-slogan-p">
+          <p className="text-stone-600 font-sans text-xs sm:text-sm lg:text-base leading-relaxed max-w-2xl" id="hero-slogan-p">
             Somos Vida Plena, una <strong className="font-medium text-stone-900">comunidad cristiana en Bogotá</strong> enfocada en edificar hogares y vivir una fe que transforme vidas. Como <strong className="font-medium text-stone-900">Iglesia Cristiana</strong>, buscamos compartir el evangelio de Jesucristo de manera práctica, cercana y sencilla. Si buscas un espacio donde puedas crecer en la fe, restaurarte y caminar en familia, te damos la bienvenida.
           </p>
 

@@ -1,32 +1,33 @@
-import { Sun, Flame, Users, Clock, MapPin, Sparkles, Heart } from "lucide-react";
+import { motion } from "motion/react";
+import { Clock, MapPin, ArrowRight, Calendar } from "lucide-react";
 import { ServiceInfo } from "../types";
 
 const SERVICES_SCHEDULE: ServiceInfo[] = [
   {
     id: "dominical",
-    name: "Celebración de la Fe",
+    name: "Celebración Dominical",
     day: "Domingos",
     time: "8:00 AM y 10:30 AM",
-    description: "Nuestra reunión presencial principal. Un espacio para adorar juntos en comunidad, recibir un mensaje transformador y relevante de la Palabra de Dios, y orar por necesidades familiares.",
-    iconName: "Sun",
+    description: "Reunión principal para adorar en familia, recibir la enseñanza bíblica y orar juntos por la bendición de cada hogar.",
+    iconName: "Calendar",
     type: "principal",
   },
   {
     id: "miercoles",
-    name: "Miércoles Explosivos",
+    name: "Miércoles de Enseñanza",
     day: "Miércoles",
     time: "7:00 PM",
-    description: "Un espacio de intercesión en llamas, intercesión activa por milagros y clamor ferviente que enciende la fe y el avivamiento en tu semana.",
-    iconName: "Flame",
+    description: "Espacio de intercesión comunitaria y estudio bíblico práctico a mitad de semana para fortalecer tu caminar.",
+    iconName: "Calendar",
     type: "especial",
   },
   {
     id: "oracion-madrugada-adn",
-    name: "Oración de madrugada ADN",
+    name: "Oración de Madrugada",
     day: "Martes",
     time: "5:00 AM",
-    description: "Espacio de intercesión y búsqueda en el altar a primera hora de la mañana, orando por bendición, dirección espiritual y fortalecimiento de cada hogar y familia.",
-    iconName: "Users",
+    description: "Búsqueda e intercesión a primera hora por las familias, la ciudad y la dirección espiritual de cada congregante.",
+    iconName: "Calendar",
     type: "estudio",
   },
   {
@@ -34,8 +35,8 @@ const SERVICES_SCHEDULE: ServiceInfo[] = [
     name: "Vida Kids",
     day: "Domingos",
     time: "8:00 AM y 10:30 AM",
-    description: "Un auditorio interactivo y seguro adaptado para que los niños crezcan conociendo el amor de Jesús con clases lúdicas y dinámicas bíblicas.",
-    iconName: "Sparkles",
+    description: "Salones formativos dinámicos y seguros para que niños de todas las edades crezcan en valores cristianos.",
+    iconName: "Calendar",
     type: "especial",
   },
   {
@@ -43,138 +44,138 @@ const SERVICES_SCHEDULE: ServiceInfo[] = [
     name: "Reunión de Mujeres",
     day: "Primer Sábado de Mes",
     time: "4:00 PM",
-    description: "Un espacio valioso de edificación de fe, intercesión conjunta, restauración interior y conexión de corazón diseñado especialmente para bendecir a cada mujer.",
-    iconName: "Heart",
+    description: "Encuentro de edificación, acompañamiento pastoral y oración dedicado a las mujeres de la comunidad.",
+    iconName: "Calendar",
     type: "especial",
   },
   {
     id: "jovenes_vip",
-    name: "Jóvenes (Zona VIP)",
+    name: "Jóvenes",
     day: "Primer Sábado de Mes",
     time: "5:00 PM",
-    description: "Reunión especial de jóvenes enfocada en la consagración activa, edificar un propósito de vida eterno y consolidar amistades sanas basadas en la verdad.",
-    iconName: "Sparkles",
+    description: "Comunidad juvenil centrada en principios de vida, amistades constructivas y desarrollo de propósito.",
+    iconName: "Calendar",
     type: "especial",
   },
 ];
 
 export default function Services() {
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case "Sun":
-        return <Sun className="w-5 h-5 text-amber-600" />;
-      case "Flame":
-        return <Flame className="w-5 h-5 text-rose-600" />;
-      case "Users":
-        return <Users className="w-5 h-5 text-red-600" />;
-      case "Sparkles":
-        return <Sparkles className="w-5 h-5 text-yellow-500" />;
-      case "Heart":
-        return <Heart className="w-5 h-5 text-red-600 fill-red-500/10" />;
-      default:
-        return <Clock className="w-5 h-5 text-stone-500" />;
-    }
-  };
-
   return (
-    <section id="servicios" className="py-24 px-6 bg-[#f4f4f6] border-t border-stone-200/50">
-      <div className="max-w-7xl mx-auto">
+    <section id="servicios" className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-[#f4f4f6] border-t border-stone-200/60">
+      <div className="w-full max-w-[1600px] mx-auto">
         
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16" id="services-header">
-          <span className="text-[10px] uppercase font-bold text-red-800 tracking-widest bg-red-50 border border-red-100 px-3.5 py-1 rounded-full inline-block mb-3">
-            Nuestras Reuniones
+        {/* Encabezado Minimalista y Elegante */}
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3" id="services-header">
+          <span className="text-[11px] uppercase font-bold text-stone-500 tracking-[0.25em] block">
+            Horarios de Servicios
           </span>
-          <h2 className="text-stone-900 font-display font-bold text-3xl sm:text-4xl tracking-tight">
-            Horarios de Conexión
+          <h2 className="text-stone-950 font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
+            Nuestras Reuniones Semanales
           </h2>
-          <p className="text-stone-500 font-sans text-sm sm:text-base leading-relaxed mt-3">
-            Te invitamos a sumarte de manera presencial a cualquiera de nuestros servicios semanales. Creemos que cada reunión es una cita divina y la puerta a una vida llena de propósito.
+          <p className="text-stone-600 font-sans text-xs sm:text-sm md:text-base leading-relaxed max-w-lg mx-auto">
+            Te esperamos con los brazos abiertos en nuestras reuniones presenciales como familia en Bogotá.
           </p>
         </div>
 
-        {/* Schedule Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
-          {SERVICES_SCHEDULE.map((service) => (
-            <div
-              key={service.id}
-              className={`relative bg-white border rounded-3xl p-6 sm:p-8 transition-all duration-300 flex flex-col justify-between hover:shadow-lg group ${
-                service.type === "principal"
-                  ? "border-red-600/30 shadow-xs ring-1 ring-red-500/5"
-                  : "border-stone-200/60 shadow-xs"
-              }`}
-              id={`service-card-${service.id}`}
-            >
-              {service.type === "principal" && (
-                <div className="absolute top-4 right-4 bg-red-100 text-red-900 text-[9px] font-bold tracking-wider font-display px-2.5 py-1 rounded-full flex items-center gap-1 uppercase" id="badge-reunion-central">
-                  <Sparkles className="w-2.5 h-2.5" />
-                  Servicio Central
-                </div>
-              )}
+        {/* Grid de Cajas Minimalistas, Elegantes y Animadas (Sin Emojis) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch" id="services-grid">
+          {SERVICES_SCHEDULE.map((service, index) => {
+            const isPrincipal = service.type === "principal";
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: index * 0.08, ease: "easeOut" }}
+                whileHover={{ 
+                  y: -6, 
+                  transition: { duration: 0.22, ease: "easeOut" } 
+                }}
+                className={`relative bg-white rounded-3xl p-7 sm:p-8 flex flex-col justify-between border transition-all duration-300 cursor-default ${
+                  isPrincipal
+                    ? "border-stone-900 shadow-sm hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] ring-1 ring-stone-900/5"
+                    : "border-stone-200/80 shadow-xs hover:border-stone-300 hover:shadow-[0_14px_32px_rgba(0,0,0,0.06)]"
+                }`}
+                id={`service-card-${service.id}`}
+              >
+                {isPrincipal && (
+                  <div className="absolute top-5 right-5 text-[9px] font-bold uppercase tracking-[0.2em] text-red-600 bg-red-50 px-2.5 py-1 rounded-full border border-red-100">
+                    Sede Norte
+                  </div>
+                )}
 
-              <div>
-                {/* Icon Wrapper */}
-                <div className="w-12 h-12 rounded-2xl bg-stone-100 flex items-center justify-center mb-6 group-hover:scale-105 transition-all duration-300" id={`service-icon-wrapper-${service.id}`}>
-                  {getIcon(service.iconName)}
+                <div className="space-y-4 text-left">
+                  {/* Día y Hora sobrio */}
+                  <div className="flex items-center gap-2">
+                    <span className="text-[11px] uppercase font-bold text-stone-500 tracking-wider">
+                      {service.day}
+                    </span>
+                    <span className="text-stone-300">·</span>
+                    <span className="text-stone-700 font-sans text-xs font-semibold flex items-center gap-1.5">
+                      <Clock className="w-3.5 h-3.5 text-stone-400" />
+                      {service.time}
+                    </span>
+                  </div>
+
+                  {/* Nombre */}
+                  <h3 className="font-display font-bold text-stone-950 text-xl tracking-tight leading-snug">
+                    {service.name}
+                  </h3>
+
+                  {/* Descripción natural y pulida */}
+                  <p className="text-stone-600 font-sans text-xs sm:text-[13px] leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
 
-                {/* Day & Time badges */}
-                <div className="flex items-center gap-2 mb-3" id={`service-badges-${service.id}`}>
-                  <span className="text-stone-800 font-display font-semibold text-xs py-1 rounded-md">
-                    {service.day}
+                {/* Pie de Tarjeta Sobrio */}
+                <div className="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-left">
+                  <span className="text-[11px] font-medium text-stone-400">
+                    Entrada libre · Presencial
                   </span>
-                  <div className="w-1 h-1 rounded-full bg-stone-300" />
-                  <span className="text-stone-500 font-sans text-xs flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-stone-400" />
-                    {service.time}
+                  <span className="text-xs font-bold text-stone-900 inline-flex items-center gap-1">
+                    Bogotá
+                    <ArrowRight className="w-3.5 h-3.5 text-stone-400" />
                   </span>
                 </div>
-
-                {/* Name & Description */}
-                <h3 className="text-stone-900 font-display font-bold text-lg mb-3" id={`service-title-${service.id}`}>
-                  {service.name}
-                </h3>
-                <p className="text-stone-600 font-sans text-xs leading-relaxed mb-6">
-                  {service.description}
-                </p>
-              </div>
-
-              {/* Card Footer Button */}
-              <div className="pt-4 border-t border-stone-100 flex items-center gap-2 text-[11px] font-semibold text-stone-800 uppercase tracking-widest group-hover:text-red-800 transition-colors">
-                <Heart className="w-3 h-3 text-red-500 fill-red-500/10" />
-                <span>Abierto para todos</span>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* Location Note Bar (Elegant Horizontal Card Below) */}
-        <div
-          className="mt-12 bg-stone-900 text-stone-100 rounded-3xl p-6 sm:p-8 border border-stone-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6"
+        {/* Barra de Ubicación Minimalista */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-14 bg-stone-950 text-stone-100 rounded-3xl p-7 sm:p-10 border border-stone-900 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6"
           id="location-footer-banner"
         >
-          <div className="flex items-center gap-4 text-left">
-            <div className="w-12 h-12 rounded-full bg-red-800/60 border border-red-600/30 flex items-center justify-center text-red-400 shrink-0 hidden sm:flex">
-              <MapPin className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="font-display font-bold text-sm text-stone-100">Instalaciones de Reunión · Cl. 163 #18a-23, Bogotá</h4>
-              <p className="text-stone-400 text-xs mt-1 max-w-lg leading-relaxed">
-                Auditorio principal en Cl. 163 #18a-23, Bogotá. Teléfono / WhatsApp: <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-white hover:text-red-400 font-semibold underline">304 6485133</a> · Servicios: Dom 8:00 AM & 10:30 AM · Mié 7:00 PM · Parqueadero vigilado y salas infantiles.
-              </p>
-            </div>
+          <div className="text-left space-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-red-500 block">
+              Auditorio Principal
+            </span>
+            <h4 className="font-display font-bold text-lg sm:text-xl text-white">
+              Cl. 163 #18a-23 · Bogotá Norte
+            </h4>
+            <p className="text-stone-400 font-sans text-xs sm:text-sm max-w-xl leading-relaxed">
+              Contamos con parqueadero vigilado, atención para niños y fácil acceso. Comunícate al <a href="https://wa.me/573046485133" target="_blank" rel="noopener noreferrer" className="text-white hover:text-red-400 font-semibold underline">304 6485133</a>.
+            </p>
           </div>
+          
           <a
             href="https://share.google/pvSe8QKyMZ2HoplYx"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full md:w-auto bg-red-600 hover:bg-red-700 text-white font-sans text-xs font-medium px-6 py-2.5 rounded-lg flex items-center justify-center gap-2 transition duration-200 shrink-0 shadow-xs"
+            className="w-full md:w-auto bg-red-600 hover:bg-red-700 active:scale-95 text-white font-sans text-xs sm:text-sm font-semibold px-7 py-3 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 shrink-0 shadow-md cursor-pointer"
             id="gps-navigation"
           >
-            Cómo Llegar (Google Maps)
-            <MapPin className="w-3.5 h-3.5 text-white" />
+            <span>Cómo Llegar en Google Maps</span>
+            <MapPin className="w-4 h-4 text-white" />
           </a>
-        </div>
+        </motion.div>
 
       </div>
     </section>

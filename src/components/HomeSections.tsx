@@ -592,7 +592,15 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6" id="blogs-grid">
             
             {/* Video Card 1 */}
-            <div className="bg-white border border-stone-200/90 rounded-[24px] p-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between" id="video-embed-card-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: 0, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22, ease: "easeOut" } }}
+              className="bg-white border border-stone-200/90 rounded-[24px] p-4 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+              id="video-embed-card-1"
+            >
               <div className="space-y-3 text-left">
                 <div className="aspect-video w-full rounded-2xl overflow-hidden bg-stone-950 shadow-xs">
                   {renderVideoCover("WKzvTfoh4_U", "Restaurando Familias con el Poder de Dios")}
@@ -604,10 +612,18 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   </h3>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Video Card 2 */}
-            <div className="bg-white border border-stone-200/90 rounded-[24px] p-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between" id="video-embed-card-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: 0.1, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22, ease: "easeOut" } }}
+              className="bg-white border border-stone-200/90 rounded-[24px] p-4 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+              id="video-embed-card-2"
+            >
               <div className="space-y-3 text-left">
                 <div className="aspect-video w-full rounded-2xl overflow-hidden bg-stone-950 shadow-xs">
                   {renderVideoCover("Xwk_yjISVn4", "Estableciendo el Reino de Dios en la Tierra")}
@@ -619,10 +635,18 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   </h3>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Video Card 3 */}
-            <div className="bg-white border border-stone-200/90 rounded-[24px] p-4 hover:shadow-md transition-all duration-300 flex flex-col justify-between" id="video-embed-card-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.22, ease: "easeOut" } }}
+              className="bg-white border border-stone-200/90 rounded-[24px] p-4 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+              id="video-embed-card-3"
+            >
               <div className="space-y-3 text-left">
                 <div className="aspect-video w-full rounded-2xl overflow-hidden bg-stone-950 shadow-xs">
                   {renderVideoCover("QDE2lt1yONQ", "Caminando con Valentía y Esperanza Diaria")}
@@ -634,18 +658,18 @@ export default function HomeSections({ onNavigate }: SectionsProps) {
                   </h3>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
       </section>
 
       {/* SECTION 4: Callout Banner Sé parte del cambio (Amplio de derecha a izquierda) */}
-      <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-12 xl:px-16 bg-[#f4f4f6]" id="callout-banner-section">
-        <div className="w-full max-w-[1536px] mx-auto">
+      <section className="py-16 sm:py-20 px-4 sm:px-8 lg:px-14 xl:px-20 2xl:px-28 bg-[#f4f4f6]" id="callout-banner-section">
+        <div className="w-full max-w-[1720px] mx-auto">
           
           <div 
-            className="bg-[#0c0a09] text-white rounded-[28px] sm:rounded-[36px] px-6 sm:px-14 lg:px-20 py-16 sm:py-20 relative overflow-hidden text-center flex flex-col items-center justify-center border border-stone-900 shadow-2xl w-full"
+            className="bg-[#0c0a09] text-white rounded-[28px] sm:rounded-[36px] px-6 sm:px-16 lg:px-24 py-16 sm:py-20 relative overflow-hidden text-center flex flex-col items-center justify-center border border-stone-900 shadow-2xl w-full"
             id="callout-card"
           >
             {/* Subtle glow depth */}
